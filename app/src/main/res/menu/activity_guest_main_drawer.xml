@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_loyalty"
+            android:title="รู้เรื่องมะเร็งเต้านม" />
+        <item
+            android:id="@+id/questionnaire"
+            android:icon="@drawable/ic_assignment"
+            android:title="แบบสอบถาม" />
+        <item
+            android:id="@+id/test"
+            android:icon="@drawable/ic_face"
+            android:title="ท่าสาธิตการตรวจ" />
+        <item
+            android:id="@+id/alarm"
+            android:icon="@drawable/ic_alarm"
+            android:title="แจ้งเตือน" />
+        <item
+            android:id="@+id/gps"
+            android:icon="@drawable/ic_place"
+            android:title="GPS" />
+        <item
+            android:id="@+id/Posts"
+            android:icon="@drawable/ic_content"
+            android:title="กระทู้" />
+        <item
+            android:id="@+id/touch"
+            android:icon="@drawable/ic_pan"
+            android:title=""/>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/help"
+                android:icon="@drawable/ic_help"
+                android:title="About us" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="signin" />
+            <item
+                android:id="@+id/register"
+                android:icon="@drawable/ic_close"
+                android:title="signup" />
+        </menu>
+    </item>
+</menu>

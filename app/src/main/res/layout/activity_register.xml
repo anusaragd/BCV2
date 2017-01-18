@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.anusara.bcv2.RegisterActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@drawable/custom"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/PWLayout"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/USLayout"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="PASSWORD"
+            android:paddingLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/password"
+            android:layout_alignRight="@+id/username"
+            android:layout_below="@+id/username"
+            android:ems="10"
+            android:inputType="textPassword"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@drawable/custom"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/EMLayput"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/PWLayout"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="E-MAIL"
+            android:paddingLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/email"
+            android:layout_alignRight="@+id/password"
+            android:layout_below="@+id/password"
+            android:ems="10"
+            android:inputType="textEmailAddress"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@drawable/custom"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/Nlayout"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/EMLayput"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="NAME"
+            android:paddingLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/name"
+            android:layout_alignRight="@+id/email"
+            android:layout_below="@+id/email"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@drawable/custom"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/LNLayout"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/Nlayout"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="LASTNAME"
+            android:paddingLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/lastname"
+            android:layout_alignRight="@+id/name"
+            android:layout_below="@+id/name"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@drawable/custom"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/USLayout"
+        android:layout_marginTop="99dp"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignParentStart="true">
+
+        <EditText android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:paddingLeft="15dp"
+            android:hint="USERNAME"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/username"/>
+    </LinearLayout>
+
+
+    <Button
+        android:background="#FF5252"
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/subbutt"
+        android:textColor="#FFFFFF"
+        android:text="SUBMIT"
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:background="#FF5252"
+        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/canbutt"
+        android:textColor="#FFFFFF"
+        android:text="CANCLE"
+        android:textSize="20dp"
+        android:layout_alignBottom="@+id/subbutt"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:layout_below="@+id/LNLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="94dp" />
+
+    <Button
+        android:id="@+id/Button1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:cropToPadding="true"
+        android:background="#F06292"
+        android:text="ตั้งค่า"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="REGISTER"
+        android:textColor="#EC407A"
+        android:textSize="30dp"
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:id="@+id/textView4"
+        android:layout_alignBottom="@+id/subbutt"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>
