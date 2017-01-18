@@ -8,6 +8,112 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/breastcancer"
     tools:context="com.example.anusara.bcv2.MainActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Welcome..."
+        android:textSize="40dp"
+        android:id="@+id/dd"
+        android:textColor="#E91E63"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="400dp"
+        android:background="@drawable/custom"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dd"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout">
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_weight="0.5" />
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:hint="Username"
+            android:paddingLeft="10dp"
+            android:textColorHint="#FF5252"
+            android:background="#FF8A80"
+            android:ems="10"
+            android:id="@+id/editText" />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_weight="0.5" />
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:paddingLeft="10dp"
+            android:textColorHint="#FF5252"
+            android:background="#FF8A80"
+            android:ems="10"
+            android:id="@+id/editText2" />
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_weight="0.5" />
+
+        <Button
+
+            android:layout_width="200dp"
+            android:text="sign in"
+            android:textColor="#FF5252"
+            android:layout_height="60dp"
+            android:background="@drawable/custom_rectangle_edt"
+            android:layout_gravity="center"
+            android:id="@+id/signin"
+            />
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_weight="0.5" />
+        <Button
+
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:text="sign up"
+            android:textColor="#FF5252"
+            android:background="@drawable/custom_rectangle_edt"
+            android:layout_gravity="center"
+            android:id="@+id/signup"
+            />
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_weight="0.5" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="skip"
+        android:layout_gravity="center"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="18dp"
+        android:textSize="20sp"
+        android:textColor="#FFF"
+        android:background="@android:color/transparent"
+        android:id="@+id/skipbut"
+        android:onClick="onClickNext"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
