@@ -40,7 +40,11 @@
         <activity android:name=".Member.MTest.MT4Activity" />
         <activity android:name=".Member.MTest.MT5Activity" />
         <activity android:name=".Member.MTest.MT6Activity" />
-        <activity android:name=".Member.MTest.MTSumActivity"></activity>
+        <activity android:name=".Member.MTest.MTSumActivity" />
+        <activity
+            android:name=".Member.MPost.MPostActivity"
+            android:label="@string/title_activity_mpost"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.anusara.bcv2.About.AboutActivity;
+import com.example.anusara.bcv2.HelpActivity;
+import com.example.anusara.bcv2.Member.MPost.MPostActivity;
 import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.Member.Questionnaire.MQuestionActivity;
 import com.example.anusara.bcv2.R;
@@ -111,25 +113,25 @@ public class MembermainActivity extends AppCompatActivity
 //            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
 //            startActivity(intent);
 //
-//        } else {
-//            if (id == R.id.Posts) {
-//                Intent intent = new Intent(getApplicationContext(), postsActivity.class);
-//                intent.putExtra("username", user);
-//                startActivity(intent);
-//
+        } else {
+            if (id == R.id.Posts) {
+                Intent intent = new Intent(getApplicationContext(), MPostActivity.class);
+                intent.putExtra("username", user);
+                startActivity(intent);
+
 //            } else if (id == R.id.touch) {
 //                Intent intent = new Intent(getApplicationContext(), touchActivity.class);
 //                startActivity(intent);
 //
-//            } else if (id == R.id.help) {
-//                Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
-//                startActivity(intent);
+            } else if (id == R.id.help) {
+                Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
+                startActivity(intent);
 //
 //            } else if (id == R.id.nav_send) {
 //                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
 //                startActivity(intent);
 //
-//            }
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
