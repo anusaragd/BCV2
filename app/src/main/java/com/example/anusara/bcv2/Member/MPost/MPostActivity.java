@@ -86,7 +86,7 @@ public class MPostActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MPostActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(MPostActivity.this, MPostaddActivity.class);
                 intent.putExtra("username",user);
                 startActivityForResult(intent, 1);
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
