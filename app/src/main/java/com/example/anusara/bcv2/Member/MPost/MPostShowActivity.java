@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.anusara.bcv2.DataManager.DataAccountManager;
+import com.example.anusara.bcv2.Member.MComment.CommentActivity;
 import com.example.anusara.bcv2.R;
 
 import org.json.JSONArray;
@@ -46,19 +47,19 @@ public class MPostShowActivity extends AppCompatActivity {
         user = DataAccountManager.getInstance().getUsername();
 
         listView = (ListView) findViewById(R.id.listView2);
-//        add = (Button)findViewById(R.id.addcomment);
-//        add.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                if (v.getId() == R.id.addcomment) {
-//                    Intent intent = new Intent(getApplicationContext(), commentActivity.class);
-////                    intent.putExtra("p_id",id);
-//                    intent.putExtra("username",user);
-//                    startActivity(intent);
-//
-//                }
+        add = (Button)findViewById(R.id.addcomment);
+        add.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (v.getId() == R.id.addcomment) {
+                    Intent intent = new Intent(getApplicationContext(), CommentActivity.class);
+//                    intent.putExtra("p_id",id);
+                    intent.putExtra("username",user);
+                    startActivity(intent);
 
-//            }
-//        });
+                }
+
+            }
+        });
 
         getList();
 

@@ -48,6 +48,9 @@ public class MPostaddActivity extends AppCompatActivity {
         edt_contents = (EditText)findViewById(R.id.edt_contents);
         btn_insert = (Button)findViewById(R.id.btn_insert);
         cal = Calendar.getInstance();
+        day = cal.get(Calendar.DAY_OF_MONTH);
+        month = cal.get(Calendar.MONTH);
+        year = cal.get(Calendar.YEAR);
         btn_insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +65,8 @@ public class MPostaddActivity extends AppCompatActivity {
                         try {
 //                            response = http.run("http://192.168.43.180/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.2/breast-cancer/insert2.php");
-                            response = http.run("http://192.168.1.37/breast-cancer/insert2.php");
+//                            response = http.run("http://192.168.1.37/breast-cancer/insert2.php");
+                            response = http.run("http://192.168.1.43/breast-cancer/insert2.php");
 //                            response = http.run("http://172.19.237.81/breast-cancer/insert2.php");
                         } catch (IOException e) {
                             // TODO Auto-generated catch block
@@ -99,6 +103,7 @@ public class MPostaddActivity extends AppCompatActivity {
                     + selectedYear);
         }
     };
+
 
     public class getHttp {
         OkHttpClient client = new OkHttpClient();

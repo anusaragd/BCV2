@@ -46,7 +46,8 @@
             android:label="@string/title_activity_mpost"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Member.MPost.MPostaddActivity" />
-        <activity android:name=".Member.MPost.MPostShowActivity"></activity>
+        <activity android:name=".Member.MPost.MPostShowActivity" />
+        <activity android:name=".Member.MComment.CommentActivity"></activity>
     </application>
 
 </manifest>
