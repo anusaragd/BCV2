@@ -8,16 +8,63 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#FFEBEE"
     tools:context="com.example.anusara.bcv2.Member.MPost.MPostaddActivity">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/shape_post"
+        android:layout_alignParentEnd="true"
+        android:weightSum="1">
 
-    <TextView
-        android:text="dsgdfgdfgf"
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:hint="เนื้อหา"
+            android:paddingLeft="10dp"
+            android:id="@+id/edt_contents" />
+    </LinearLayout>
+
+    <EditText
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:inputType="textPersonName"
+        android:hint="ชื่อกระทู้"
+        android:ems="10"
+        android:id="@+id/edt_name"
+        android:paddingLeft="10dp"
+        android:background="@drawable/shape_post"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="57dp"
-        android:id="@+id/textView3" />
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="ล้าง"
+        android:textSize="18dp"
+        android:textColor="#ffffff"
+        android:background="#E53935"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_marginBottom="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="โพสต์"
+        android:textSize="18dp"
+        android:textColor="#ffffff"
+        android:background="#E53935"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_insert"
+        android:layout_alignBaseline="@+id/button"
+        android:layout_alignBottom="@+id/button"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

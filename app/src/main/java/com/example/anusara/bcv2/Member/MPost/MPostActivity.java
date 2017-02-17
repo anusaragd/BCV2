@@ -65,7 +65,7 @@ public class MPostActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(MPostActivity.this,RegisterActivity.class);
+                Intent intent = new Intent(MPostActivity.this,MPostShowActivity.class);
                 intent.putExtra("username",user);
                 intent.putExtra("name", listname.get(position));
                 intent.putExtra("content", listcontent.get(position));
