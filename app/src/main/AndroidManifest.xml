@@ -3,8 +3,8 @@
     package="com.example.anusara.bcv2">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--<uses-permission android:name="android.permission.VIBRATE" />-->
 
+    <!-- <uses-permission android:name="android.permission.VIBRATE" /> -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -49,7 +49,8 @@
         <activity android:name=".Member.MPost.MPostaddActivity" />
         <activity android:name=".Member.MPost.MPostShowActivity" />
         <activity android:name=".Member.MComment.CommentActivity" />
-        <activity android:name=".Touch.TouchActivity"></activity>
+        <activity android:name=".Touch.TouchActivity" />
+        <activity android:name=".Alarm.SetAlarmActivity"></activity>
     </application>
 
 </manifest>

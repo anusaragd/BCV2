@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.anusara.bcv2.About.AboutActivity;
+import com.example.anusara.bcv2.Alarm.SetAlarmActivity;
 import com.example.anusara.bcv2.HelpActivity;
 import com.example.anusara.bcv2.Member.MPost.MPostActivity;
 import com.example.anusara.bcv2.Member.MTest.MTestActivity;
@@ -106,10 +107,10 @@ public class MembermainActivity extends AppCompatActivity
             intent.putExtra("username",user);
             startActivity(intent);
 
-//        } else if (id == R.id.alarm) {
-//            Intent intent = new Intent(getApplicationContext(), AlertsetActivity.class);
-//            startActivity(intent);
-//
+        } else if (id == R.id.alarm) {
+            Intent intent = new Intent(getApplicationContext(), SetAlarmActivity.class);
+            startActivity(intent);
+
 //        } else if (id == R.id.gps) {
 //            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
 //            startActivity(intent);
