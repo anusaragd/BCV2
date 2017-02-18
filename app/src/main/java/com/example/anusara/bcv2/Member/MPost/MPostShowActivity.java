@@ -52,7 +52,7 @@ public class MPostShowActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (v.getId() == R.id.addcomment) {
                     Intent intent = new Intent(getApplicationContext(), CommentActivity.class);
-//                    intent.putExtra("p_id",id);
+                    intent.putExtra("p_id",id);
                     intent.putExtra("username",user);
                     startActivity(intent);
 
@@ -69,7 +69,7 @@ public class MPostShowActivity extends AppCompatActivity {
 
         name = getIntent().getStringExtra("name");
         content = getIntent().getStringExtra("content");
-        date = getIntent().getStringExtra("date");
+        date = getIntent().getStringExtra("p_date");
 
         text1 = (TextView) findViewById(R.id.textView11);
         text1.setText(name);
@@ -90,7 +90,8 @@ public class MPostShowActivity extends AppCompatActivity {
                 String response = null;
                 try {
 //                    response = http.run("http://192.168.43.180/breast-cancer/postcomment.php");
-                    response = http.run("http://192.168.1.37/breast-cancer/postcomment.php");
+                    response = http.run("http://192.168.1.5/breast-cancer/postcomment.php");
+//                    response = http.run("http://192.168.1.37/breast-cancer/postcomment.php");
 //                    response = http.run("http://172.19.237.81/breast-cancer/postcomment.php");
 //                    response = http.run("http://192.168.1.2/breast-cancer/postcomment.php");
                 } catch (IOException e) {
@@ -111,7 +112,7 @@ public class MPostShowActivity extends AppCompatActivity {
                     for(int i=0; i<jsonArray.length(); i++){
                         JSONObject json_data = jsonArray.getJSONObject(i);
                         listname.add(i, json_data.getString("c_message"));
-                        listcontent.add(i, json_data.getString("c_message"));
+                        listcontent.add(i, json_data.getString("username"));
                         Log.e( "json_data: ", json_data.getString("c_message"));
 
 

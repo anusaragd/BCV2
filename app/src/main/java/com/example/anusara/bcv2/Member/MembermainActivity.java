@@ -18,6 +18,7 @@ import com.example.anusara.bcv2.Member.MPost.MPostActivity;
 import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.Member.Questionnaire.MQuestionActivity;
 import com.example.anusara.bcv2.R;
+import com.example.anusara.bcv2.Touch.TouchActivity;
 
 public class MembermainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -119,10 +120,10 @@ public class MembermainActivity extends AppCompatActivity
                 intent.putExtra("username", user);
                 startActivity(intent);
 
-//            } else if (id == R.id.touch) {
-//                Intent intent = new Intent(getApplicationContext(), touchActivity.class);
-//                startActivity(intent);
-//
+            } else if (id == R.id.touch) {
+                Intent intent = new Intent(getApplicationContext(), TouchActivity.class);
+                startActivity(intent);
+
             } else if (id == R.id.help) {
                 Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
                 startActivity(intent);
