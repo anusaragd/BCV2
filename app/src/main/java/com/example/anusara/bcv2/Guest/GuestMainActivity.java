@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.anusara.bcv2.About.AboutActivity;
+import com.example.anusara.bcv2.Guest.GQuestion.GQuestionActivity;
 import com.example.anusara.bcv2.HelpActivity;
 import com.example.anusara.bcv2.MainActivity;
 import com.example.anusara.bcv2.R;
@@ -90,10 +91,10 @@ public class GuestMainActivity extends AppCompatActivity
         if (id == R.id.about) {
             Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
             startActivity(intent);
-//            // Handle the camera action
-//        } else if (id == R.id.questionnaire) {
-//            Intent intent = new Intent(getApplicationContext(), QuestionnaireActivity.class);
-//            startActivity(intent);
+            // Handle the camera action
+        } else if (id == R.id.questionnaire) {
+            Intent intent = new Intent(getApplicationContext(), GQuestionActivity.class);
+            startActivity(intent);
 //
 //        } else if (id == R.id.test) {
 //            Intent intent = new Intent(getApplicationContext(), testActivity.class);
