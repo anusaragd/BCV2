@@ -23,6 +23,7 @@ import com.example.anusara.bcv2.MainActivity;
 import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.R;
 import com.example.anusara.bcv2.RegisterActivity;
+import com.example.anusara.bcv2.Touch.IntroTouchActivity;
 import com.example.anusara.bcv2.Touch.TouchActivity;
 
 public class GuestMainActivity extends AppCompatActivity
@@ -117,7 +118,7 @@ public class GuestMainActivity extends AppCompatActivity
             startActivity(intent);
 
         }else if (id == R.id.touch) {
-            Intent intent = new Intent(getApplicationContext(), TouchActivity.class);
+            Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
             startActivity(intent);
 
         }else if (id == R.id.help) {
