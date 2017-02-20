@@ -35,7 +35,7 @@ public class SetAlarmActivity extends AppCompatActivity {
                 tva = (TextView) findViewById(R.id.textView3);
             }
         });
-        tva = (TextView) findViewById(R.id.textView3);
+        //tva = (TextView) findViewById(R.id.textView3);
     }
 
 

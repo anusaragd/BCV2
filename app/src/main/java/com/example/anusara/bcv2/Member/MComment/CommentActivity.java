@@ -26,7 +26,7 @@ public class CommentActivity extends AppCompatActivity {
 
     EditText comment;
     Button sub,can ;
-    String user ;
+    String user, id ;
 
 
     @Override
@@ -35,6 +35,7 @@ public class CommentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_comment);
 
         user = DataAccountManager.getInstance().getUsername();
+        id = getIntent().getStringExtra("p_id");
 
         comment = (EditText)findViewById(R.id.comment);
         sub = (Button)findViewById(R.id.button8);
@@ -52,7 +53,8 @@ public class CommentActivity extends AppCompatActivity {
                         try {
 //                            response = http.run("http://192.168.43.180/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.2/breast-cancer/insert2.php");
-                            response = http.run("http://192.168.1.5/breast-cancer/insertcomment.php");
+//                            response = http.run("http://192.168.1.5/breast-cancer/insertcomment.php");
+                            response = http.run("http://192.168.1.33/breast-cancer/insertcomment.php");
 //                            response = http.run("http://192.168.1.37/breast-cancer/insertcomment.php");
 //                            response = http.run("http://172.19.237.81/breast-cancer/insert2.php");
                         } catch (IOException e) {
@@ -82,6 +84,7 @@ public class CommentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (v.getId() == R.id.canbelb) {
                     Intent intent = new Intent(getApplicationContext(), MPostShowActivity.class);
+                    intent.putExtra("p_id",id);
                     startActivity(intent);
 
                 }
@@ -96,6 +99,7 @@ public class CommentActivity extends AppCompatActivity {
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("username", user)
+                .addFormDataPart("p_id", id)
                 .addFormDataPart("c_message", comment.getText().toString())
                 .build();
 

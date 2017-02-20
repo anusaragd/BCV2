@@ -66,11 +66,11 @@ public class DatePickerFragment extends DialogFragment
         TextView tv1= (TextView) getActivity().findViewById(R.id.textview1);
         final Calendar c = Calendar.getInstance();
         c.set(year,month,day);
-        this.dayofweek = c.get(Calendar.DAY_OF_WEEK);
+        //this.dayofweek = c.get(Calendar.DAY_OF_WEEK);
         this.year=year;
         this.month=month+1;
         this.day=day;
-        tv1.setText(dayOfWeek + "/" + this.day + "/" + this.month + "/" + this.year);
+        tv1.setText(this.day + "/" + this.month + "/" + this.year);
         TextView tva = (TextView)getActivity().findViewById(R.id.textView3);
 
 
