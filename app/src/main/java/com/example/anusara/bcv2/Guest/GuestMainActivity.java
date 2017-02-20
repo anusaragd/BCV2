@@ -23,6 +23,7 @@ import com.example.anusara.bcv2.MainActivity;
 import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.R;
 import com.example.anusara.bcv2.RegisterActivity;
+import com.example.anusara.bcv2.Touch.TouchActivity;
 
 public class GuestMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -114,23 +115,19 @@ public class GuestMainActivity extends AppCompatActivity
         } else if (id == R.id.Posts) {
             Intent intent = new Intent(getApplicationContext(), GPostActivity.class);
             startActivity(intent);
-//
-//        }else if (id == R.id.touch) {
-//            Intent intent = new Intent(getApplicationContext(), touchActivity.class);
-//            startActivity(intent);
-//
-//        }else if (id == R.id.help) {
-//            Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
-//            startActivity(intent);
-//
-//        }else if (id == R.id.nav_send) {
-//            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//            startActivity(intent);
-//
-//        }else if (id == R.id.register) {
-//            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-//            startActivity(intent);
-//
+
+        }else if (id == R.id.touch) {
+            Intent intent = new Intent(getApplicationContext(), TouchActivity.class);
+            startActivity(intent);
+
+        }else if (id == R.id.help) {
+            Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
+            startActivity(intent);
+
+        }else if (id == R.id.nav_send) {
+            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(intent);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
