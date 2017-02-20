@@ -51,7 +51,10 @@
         <activity android:name=".Member.MComment.CommentActivity" />
         <activity android:name=".Touch.TouchActivity" />
         <activity android:name=".Alarm.SetAlarmActivity" />
-        <activity android:name=".Guest.GQuestion.GQuestionActivity"></activity>
+        <activity android:name=".Guest.GQuestion.GQuestionActivity" />
+        <activity android:name=".Guest.GQuestion.GAnsQuesActivity" />
+        <activity android:name=".Guest.GPosts.GPostActivity" />
+        <activity android:name=".Guest.GPosts.GPostShowActivity"></activity>
     </application>
 
 </manifest>

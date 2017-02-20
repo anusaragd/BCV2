@@ -15,9 +15,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.anusara.bcv2.About.AboutActivity;
+import com.example.anusara.bcv2.Alarm.SetAlarmActivity;
+import com.example.anusara.bcv2.Guest.GPosts.GPostActivity;
 import com.example.anusara.bcv2.Guest.GQuestion.GQuestionActivity;
 import com.example.anusara.bcv2.HelpActivity;
 import com.example.anusara.bcv2.MainActivity;
+import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.R;
 import com.example.anusara.bcv2.RegisterActivity;
 
@@ -95,22 +98,22 @@ public class GuestMainActivity extends AppCompatActivity
         } else if (id == R.id.questionnaire) {
             Intent intent = new Intent(getApplicationContext(), GQuestionActivity.class);
             startActivity(intent);
-//
-//        } else if (id == R.id.test) {
-//            Intent intent = new Intent(getApplicationContext(), testActivity.class);
-//            startActivity(intent);
-//
-//        } else if (id == R.id.alarm) {
-//            Intent intent = new Intent(getApplicationContext(), AlertActivity.class);
-//            startActivity(intent);
+
+        } else if (id == R.id.test) {
+            Intent intent = new Intent(getApplicationContext(), MTestActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.alarm) {
+            Intent intent = new Intent(getApplicationContext(), SetAlarmActivity.class);
+            startActivity(intent);
 //
 //        } else if (id == R.id.gps) {
 //            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
 //            startActivity(intent);
-//
-//        } else if (id == R.id.Posts) {
-//            Intent intent = new Intent(getApplicationContext(), postsActivity.class);
-//            startActivity(intent);
+
+        } else if (id == R.id.Posts) {
+            Intent intent = new Intent(getApplicationContext(), GPostActivity.class);
+            startActivity(intent);
 //
 //        }else if (id == R.id.touch) {
 //            Intent intent = new Intent(getApplicationContext(), touchActivity.class);
