@@ -28,13 +28,13 @@ public class SetAlarmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_set_alarm);
 
 
-        submit = (Button) findViewById(R.id.button);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tva = (TextView) findViewById(R.id.textView3);
-            }
-        });
+//        submit = (Button) findViewById(R.id.button);
+//        submit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                tva = (TextView) findViewById(R.id.textView3);
+//            }
+//        });
         //tva = (TextView) findViewById(R.id.textView3);
     }
 

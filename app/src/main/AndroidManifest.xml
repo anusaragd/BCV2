@@ -56,7 +56,8 @@
         <activity android:name=".Guest.GPosts.GPostActivity" />
         <activity android:name=".Guest.GPosts.GPostShowActivity" />
         <activity android:name=".Touch.IntroTouchActivity" />
-        <activity android:name=".Touch.finishTouchActivity"></activity>
+        <activity android:name=".Touch.finishTouchActivity" />
+        <activity android:name=".GPS.GPSActivity"></activity>
     </application>
 
 </manifest>

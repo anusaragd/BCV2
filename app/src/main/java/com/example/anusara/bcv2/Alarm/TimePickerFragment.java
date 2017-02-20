@@ -5,6 +5,8 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.format.DateFormat;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -25,6 +27,9 @@ public class TimePickerFragment extends DialogFragment
         implements TimePickerDialog.OnTimeSetListener {
     static int hour;
     static int minute;
+
+    TextView tva;
+    Button submit;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -48,10 +53,24 @@ public class TimePickerFragment extends DialogFragment
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         // Do something with the time chosen by the user
         TextView tv1=(TextView) getActivity().findViewById(R.id.textView2);
+        tva = (TextView) getActivity().findViewById(R.id.textView3);
 
         this.hour=hourOfDay;
         this.minute=minute;
+
         tv1.setText(view.getCurrentHour()+" : "+view.getCurrentMinute());
+        final int a = view.getCurrentHour();
+        final int b = view.getCurrentMinute();
+
+        submit = (Button) getActivity().findViewById(R.id.button);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tva.setText(a+" : "+b);
+
+            }
+
+        });
 
     }
 

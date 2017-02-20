@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import com.example.anusara.bcv2.About.AboutActivity;
 import com.example.anusara.bcv2.Alarm.SetAlarmActivity;
+import com.example.anusara.bcv2.GPS.GPSActivity;
 import com.example.anusara.bcv2.Guest.GPosts.GPostActivity;
 import com.example.anusara.bcv2.Guest.GQuestion.GQuestionActivity;
 import com.example.anusara.bcv2.HelpActivity;
@@ -108,10 +109,10 @@ public class GuestMainActivity extends AppCompatActivity
         } else if (id == R.id.alarm) {
             Intent intent = new Intent(getApplicationContext(), SetAlarmActivity.class);
             startActivity(intent);
-//
-//        } else if (id == R.id.gps) {
-//            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-//            startActivity(intent);
+
+        } else if (id == R.id.gps) {
+            Intent intent = new Intent(getApplicationContext(), GPSActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.Posts) {
             Intent intent = new Intent(getApplicationContext(), GPostActivity.class);
