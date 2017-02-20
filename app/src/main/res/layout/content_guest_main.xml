@@ -13,4 +13,15 @@
     tools:context="com.example.anusara.bcv2.Guest.GuestMainActivity"
     tools:showIn="@layout/app_bar_guest_main">
 
+
+    <TextView
+        android:text="ยินดีต้อนรับ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:textSize="30dp"
+        android:textColor="#FF4081"
+        android:id="@+id/textView23"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
