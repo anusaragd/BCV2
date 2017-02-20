@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.anusara.bcv2.About.AboutActivity;
 import com.example.anusara.bcv2.HelpActivity;
 import com.example.anusara.bcv2.MainActivity;
 import com.example.anusara.bcv2.R;
@@ -86,9 +87,9 @@ public class GuestMainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-//        if (id == R.id.about) {
-//            Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
-//            startActivity(intent);
+        if (id == R.id.about) {
+            Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
+            startActivity(intent);
 //            // Handle the camera action
 //        } else if (id == R.id.questionnaire) {
 //            Intent intent = new Intent(getApplicationContext(), QuestionnaireActivity.class);
@@ -126,7 +127,7 @@ public class GuestMainActivity extends AppCompatActivity
 //            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
 //            startActivity(intent);
 //
-//        }
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

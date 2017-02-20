@@ -19,6 +19,7 @@ import com.example.anusara.bcv2.Member.MPost.MPostActivity;
 import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.Member.Questionnaire.MQuestionActivity;
 import com.example.anusara.bcv2.R;
+import com.example.anusara.bcv2.RegisterActivity;
 import com.example.anusara.bcv2.Touch.TouchActivity;
 
 public class MembermainActivity extends AppCompatActivity
@@ -128,11 +129,11 @@ public class MembermainActivity extends AppCompatActivity
             } else if (id == R.id.help) {
                 Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
                 startActivity(intent);
-//
-//            } else if (id == R.id.nav_send) {
-//                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-//                startActivity(intent);
-//
+
+            } else if (id == R.id.nav_send) {
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(intent);
+
             }
         }
 

@@ -13,7 +13,8 @@ import okhttp3.RequestBody;
 public class JSONObtained {
 //    public static final String BASE_URL = "http://192.168.1.35/breast-cancer/";
 //    public static final String BASE_URL = "http://192.168.1.33/breast-cancer/";
-    public static final String BASE_URL = "http://192.168.1.5/breast-cancer/";
+    public static final String BASE_URL = "http://192.168.1.33/breast-cancer/";
+//    public static final String BASE_URL = "http://192.168.1.5/breast-cancer/";
 //    public static final String BASE_URL = "http://192.168.1.43/breast-cancer/";
 //    public static final String BASE_URL = "http://192.168.1.37/breast-cancer/";
 //    public static final String BASE_URL = "http://192.168.43.180/breast-cancer/";

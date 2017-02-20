@@ -90,7 +90,8 @@ public class MPostShowActivity extends AppCompatActivity {
                 String response = null;
                 try {
 //                    response = http.run("http://192.168.43.180/breast-cancer/postcomment.php");
-                    response = http.run("http://192.168.1.5/breast-cancer/postcomment.php");
+                    response = http.run("http://192.168.1.33/breast-cancer/postcomment.php");
+//                    response = http.run("http://192.168.1.5/breast-cancer/postcomment.php");
 //                    response = http.run("http://192.168.1.37/breast-cancer/postcomment.php");
 //                    response = http.run("http://172.19.237.81/breast-cancer/postcomment.php");
 //                    response = http.run("http://192.168.1.2/breast-cancer/postcomment.php");
