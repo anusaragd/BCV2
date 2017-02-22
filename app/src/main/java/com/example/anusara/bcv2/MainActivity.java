@@ -184,4 +184,24 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
+
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (requestCode == MAIN_ACTIVITY_REQUEST_CODE) {
+//
+//            if (!AppState.getSingleInstance().isLoggingOut()) {
+//                finish();
+//            } else {
+//                AppState.getSingleInstance().setLoggingOut(false);
+//                super.onActivityResult(requestCode, resultCode, data);
+//            }
+//        } else {
+//            super.onActivityResult(requestCode, resultCode, data);
+//        }
+//    }
+//
+//    @Override
+//    protected void onNewIntent(Intent intent) {
+//        super.onNewIntent(intent);
+//
+//    }
 }

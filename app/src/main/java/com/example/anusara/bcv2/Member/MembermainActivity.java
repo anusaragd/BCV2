@@ -14,12 +14,14 @@ import android.view.MenuItem;
 
 import com.example.anusara.bcv2.About.AboutActivity;
 import com.example.anusara.bcv2.Alarm.SetAlarmActivity;
+import com.example.anusara.bcv2.GPS.GPSActivity;
 import com.example.anusara.bcv2.HelpActivity;
 import com.example.anusara.bcv2.Member.MPost.MPostActivity;
 import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.Member.Questionnaire.MQuestionActivity;
 import com.example.anusara.bcv2.R;
 import com.example.anusara.bcv2.RegisterActivity;
+import com.example.anusara.bcv2.Touch.IntroTouchActivity;
 import com.example.anusara.bcv2.Touch.TouchActivity;
 
 public class MembermainActivity extends AppCompatActivity
@@ -112,10 +114,10 @@ public class MembermainActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), SetAlarmActivity.class);
             startActivity(intent);
 
-//        } else if (id == R.id.gps) {
-//            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-//            startActivity(intent);
-//
+        } else if (id == R.id.gps) {
+            Intent intent = new Intent(getApplicationContext(), GPSActivity.class);
+            startActivity(intent);
+
         } else {
             if (id == R.id.Posts) {
                 Intent intent = new Intent(getApplicationContext(), MPostActivity.class);
@@ -123,17 +125,17 @@ public class MembermainActivity extends AppCompatActivity
                 startActivity(intent);
 
             } else if (id == R.id.touch) {
-                Intent intent = new Intent(getApplicationContext(), TouchActivity.class);
+                Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
                 startActivity(intent);
 
             } else if (id == R.id.help) {
                 Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
                 startActivity(intent);
 
-            } else if (id == R.id.nav_send) {
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent);
-
+//            } else if (id == R.id.nav_send) {
+//                Intent intent = new Intent(getApplicationContext(), Logout.class);
+//                startActivity(intent);
+//
             }
         }
 
