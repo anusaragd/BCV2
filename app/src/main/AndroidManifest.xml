@@ -3,6 +3,9 @@
     package="com.example.anusara.bcv2">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
 
     <!-- <uses-permission android:name="android.permission.VIBRATE" /> -->
     <application
@@ -57,7 +60,32 @@
         <activity android:name=".Guest.GPosts.GPostShowActivity" />
         <activity android:name=".Touch.IntroTouchActivity" />
         <activity android:name=".Touch.finishTouchActivity" />
-        <activity android:name=".GPS.GPSActivity"></activity>
+        <activity android:name=".GPS.GPSActivity" />
+        <!--<activity android:name=".Alarm.BroadcastManager"></activity>-->
+
+        <!--<receiver-->
+            <!--android:name=".Alarm.BroadcastManager"-->
+            <!--android:label="BroadcastReceiverAux">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="ALARM" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <receiver android:name=".Alarm.AutoStart">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".Alarm.YourService"
+            android:enabled="true"
+            android:process=":your_service" >
+        </service>
+        <receiver  android:name=".Alarm.Alarm"></receiver>
+
     </application>
 
 </manifest>

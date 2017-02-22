@@ -35,6 +35,7 @@ public class MPostShowActivity extends AppCompatActivity {
 
     ArrayList<String> listname = new ArrayList<>();
     ArrayList<String> listcontent = new ArrayList<>();
+    ArrayList<String> listdate = new ArrayList<>();
     ArrayAdapter<String> adapter;
 
     @Override
