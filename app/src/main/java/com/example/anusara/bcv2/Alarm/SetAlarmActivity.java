@@ -116,7 +116,7 @@ public class SetAlarmActivity extends AppCompatActivity {
                               int dayOfMonth) {
 
             tv1.setText(String.format("%02d", dayOfMonth)
-                    + "/" + String.format("%02d", monthOfYear + 1)
+                    + "/" + String.format("%02d", monthOfYear+1)
                     + "/" + year);
 
 //            date = tv1.getText().toString();

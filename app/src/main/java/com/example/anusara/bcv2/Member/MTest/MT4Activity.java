@@ -15,7 +15,8 @@ public class MT4Activity extends AppCompatActivity {
     RadioButton myOption1, myOption2, myOption3; //ปลุกกด
     Button btn1;
     String ans; //เก็บผลลัพธ์
-    int sum1,sum2,sum3,sum4; //คำตอบ
+    int sum1,sum2,sum3;
+    int sum4 = -1; //คำตอบ
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +38,22 @@ public class MT4Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Condition(); // กำหนดค่าของปุ่ม
                 if (v.getId() == R.id.nextbutton) {
-                    Intent intent = new Intent(getApplicationContext(), MT5Activity.class);
-                    intent.putExtra("sum1", sum1);
-                    intent.putExtra("sum2", sum2);
-                    intent.putExtra("sum3", sum3);
-                    intent.putExtra("sum4", sum4);
-                    startActivity(intent);
+                    if(sum4 != -1) {
+                        Intent intent = new Intent(getApplicationContext(), MT5Activity.class);
+                        intent.putExtra("sum1", sum1);
+                        intent.putExtra("sum2", sum2);
+                        intent.putExtra("sum3", sum3);
+                        intent.putExtra("sum4", sum4);
+                        startActivity(intent);
+                    }
+                    else {
+                        Intent intent = new Intent(getApplicationContext(), MT5Activity.class);
+                        intent.putExtra("sum1", sum1);
+                        intent.putExtra("sum2", sum2);
+                        intent.putExtra("sum3", sum3);
+                        startActivity(intent);
+
+                    }
 
                 }
 
@@ -58,6 +69,9 @@ public class MT4Activity extends AppCompatActivity {
         }
         if(myOption3.isChecked()){
             sum4 = 1;
+        }
+        if(sum4 == -1){
+            Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
         }
 //        ans = String.valueOf(sum4);
         Toast.makeText(getApplicationContext(),sum1 + ""+sum2 + ""+sum3+""+sum4+"",Toast.LENGTH_LONG).show();

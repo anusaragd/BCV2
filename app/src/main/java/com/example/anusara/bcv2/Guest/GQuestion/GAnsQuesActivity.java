@@ -62,7 +62,8 @@ public class GAnsQuesActivity extends AppCompatActivity {
     }
 
     public void Datasum() {
-        int a = (sum1 + sum2 + sum3 + sum4 + sum5 + sum6);
+        int a = (sum1 +sum2 + sum3 + sum4 + sum5 + sum6);
+        int b = 0;
         String ANS = new String();
 
         if (a == 0) {
@@ -74,6 +75,14 @@ public class GAnsQuesActivity extends AppCompatActivity {
         if (a >= 3 ) {
             ANS = "พบว่าคุณมีความเสี่ยงมะเร็งเต้านมเพิ่มสูงขึ้น";
         }
+        if(a == 5){
+            ANS = "ควรไปพบแพทย์โดนด่วน";
+        }
+        if(b == sum2 || b == sum5 || b == sum6)
+        {
+            ANS = "ควรไปพบแพทย์โดนด่วน";
+        }
+
 
         Toast.makeText(getApplicationContext(),a + "",Toast.LENGTH_LONG).show();
         textShow.setText(ANS);

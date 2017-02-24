@@ -39,14 +39,26 @@ public class MT6Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Condition(); // กำหนดค่าของปุ่ม
                 if (v.getId() == R.id.nextbutton) {
-                    Intent intent = new Intent(getApplicationContext(), MTSumActivity.class);
-                    intent.putExtra("sum1", sum1);
-                    intent.putExtra("sum2", sum2);
-                    intent.putExtra("sum3", sum3);
-                    intent.putExtra("sum4", sum4);
-                    intent.putExtra("sum5", sum5);
-                    intent.putExtra("sum6", sum6);
-                    startActivity(intent);
+                    if(sum6 != -1) {
+                        Intent intent = new Intent(getApplicationContext(), MTSumActivity.class);
+                        intent.putExtra("sum1", sum1);
+                        intent.putExtra("sum2", sum2);
+                        intent.putExtra("sum3", sum3);
+                        intent.putExtra("sum4", sum4);
+                        intent.putExtra("sum5", sum5);
+                        intent.putExtra("sum6", sum6);
+                        startActivity(intent);
+                    }
+                    else {
+                        Intent intent = new Intent(getApplicationContext(), MTSumActivity.class);
+                        intent.putExtra("sum1", sum1);
+                        intent.putExtra("sum2", sum2);
+                        intent.putExtra("sum3", sum3);
+                        intent.putExtra("sum4", sum4);
+                        intent.putExtra("sum5", sum5);
+                        startActivity(intent);
+
+                    }
 
                 }
 
@@ -62,6 +74,9 @@ public class MT6Activity extends AppCompatActivity {
         }
         if(myOption3.isChecked()){
             sum6 = 1;
+        }
+        if(sum6 == -1){
+            Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
         }
 //        ans = String.valueOf(sum6);
         Toast.makeText(getApplicationContext(),sum1 + ""+sum2 + ""+sum3 + ""+sum4 + ""+sum5 + ""+sum6 + "",Toast.LENGTH_LONG).show();

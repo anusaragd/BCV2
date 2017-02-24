@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.anusara.bcv2.Member.Questionnaire.AnsQuestionActivity;
 import com.example.anusara.bcv2.Member.Questionnaire.MQuestionActivity;
@@ -17,7 +18,7 @@ import com.example.anusara.bcv2.R;
 public class GQuestionActivity extends AppCompatActivity {
 
     RadioButton myOption1, myOption2, myOption3,myOption4, myOption5, myOption6,myOption7, myOption8, myOption9,myOption10, myOption11, myOption12; //ปลุกกด
-    int sum1,sum2,sum3,sum4,sum5,sum6;
+    int sum1 = -1,sum2 = -1,sum3 = -1,sum4 = -1,sum5 = -1 ,sum6 = -1;
     Button btn1, btn2;
     TextView textShow;
 
@@ -65,28 +66,33 @@ public class GQuestionActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (v.getId() == R.id.resultbutton) {
-                    Condition1();
-                    Condition2();
-                    Condition3();
-                    Condition4();
-                    Condition5();
-                    Condition6();
-                    Intent intent = new Intent(getApplicationContext(), AnsQuestionActivity.class);
-                    intent.putExtra("sum1", sum1);
-                    intent.putExtra("sum2", sum2);
-                    intent.putExtra("sum3", sum3);
-                    intent.putExtra("sum4", sum4);
-                    intent.putExtra("sum5", sum5);
-                    intent.putExtra("sum6", sum6);
-                    startActivity(intent);
+                        Condition1();
+                        Condition2();
+                        Condition3();
+                        Condition4();
+                        Condition5();
+                        Condition6();
+
+                    //sum1
+                    if(sum1 != -1 || sum2 != -1 || sum3 != -1 || sum4 != -1 || sum5 != -1 || sum6 != -1) {
+                        Intent intent = new Intent(getApplicationContext(), GAnsQuesActivity.class);
+                        intent.putExtra("sum1", sum1);
+                        intent.putExtra("sum2", sum2);
+                        intent.putExtra("sum3", sum3);
+                        intent.putExtra("sum4", sum4);
+                        intent.putExtra("sum5", sum5);
+                        intent.putExtra("sum6", sum6);
+                        startActivity(intent);
+                    }
+                    if(sum1 == -1 || sum2 == -1 || sum3 == -1 || sum4 == -1 || sum5 == -1 || sum6 == -1) {
+                        Intent intent = new Intent(getApplicationContext(), GQuestionActivity.class);
+                        startActivity(intent);
+                    }
+
 
                 }
-
             }
         });
-
-
-
 
     }
     public void Condition1() {
@@ -96,6 +102,9 @@ public class GQuestionActivity extends AppCompatActivity {
         if (myOption2.isChecked()) {
             sum1 = 0;
         }
+        if(sum1 == -1){
+            Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
+        }
 //        Toast.makeText(getApplicationContext(),sum1 + "",Toast.LENGTH_LONG).show();
     }
     public void Condition2() {
@@ -104,6 +113,9 @@ public class GQuestionActivity extends AppCompatActivity {
         }
         if (myOption4.isChecked()) {
             sum2 = 0;
+        }
+        if(sum2 == -1){
+            Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
         }
 //        Toast.makeText(getApplicationContext(),sum1 + ""+sum2 + "",Toast.LENGTH_LONG).show();
 
@@ -115,6 +127,9 @@ public class GQuestionActivity extends AppCompatActivity {
         if (myOption6.isChecked()) {
             sum3 = 0;
         }
+        if(sum3 == -1){
+            Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
+        }
 //        Toast.makeText(getApplicationContext(),sum1 + ""+sum2 + ""+sum3 + "",Toast.LENGTH_LONG).show();
 
     }
@@ -124,6 +139,9 @@ public class GQuestionActivity extends AppCompatActivity {
         }
         if (myOption8.isChecked()) {
             sum4 = 0;
+        }
+        if(sum4 == -1){
+            Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
         }
 //        Toast.makeText(getApplicationContext(),sum1 + ""+sum2 + ""+sum3 + ""+sum4 + "",Toast.LENGTH_LONG).show();
 
@@ -135,6 +153,9 @@ public class GQuestionActivity extends AppCompatActivity {
         if (myOption10.isChecked()) {
             sum5 = 0;
         }
+        if(sum5 == -1){
+            Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
+        }
 //        Toast.makeText(getApplicationContext(),sum1 + ""+sum2 + ""+sum3 + ""+sum4 + ""+sum5 + "",Toast.LENGTH_LONG).show();
 
     }
@@ -145,9 +166,11 @@ public class GQuestionActivity extends AppCompatActivity {
         if (myOption12.isChecked()) {
             sum6 = 0;
         }
+        if(sum6 == -1){
+            Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
+        }
 //        Toast.makeText(getApplicationContext(),sum1 + ""+sum2 + ""+sum3 + ""+sum4 + ""+sum5 + ""+sum6 + "",Toast.LENGTH_LONG).show();
 
     }
-
 }
 

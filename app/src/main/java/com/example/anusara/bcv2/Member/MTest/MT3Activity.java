@@ -16,7 +16,8 @@ public class MT3Activity extends AppCompatActivity {
     RadioButton myOption1, myOption2, myOption3; //ปลุกกด
     Button btn1;
     String ans; //เก็บผลลัพธ์
-    int sum1,sum2,sum3; //คำตอบ
+    int sum1,sum2;
+    int sum3 = -1; //คำตอบ
 
 
     @Override
@@ -38,12 +39,20 @@ public class MT3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Condition(); // กำหนดค่าของปุ่ม
                 if (v.getId() == R.id.nextbutton) {
+                    if(sum3 != -1){
                     Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
 //                    Intent intent = new Intent(getApplicationContext(), MT4Activity.class);
                     intent.putExtra("sum1", sum1);
                     intent.putExtra("sum2", sum2);
                     intent.putExtra("sum3", sum3);
                     startActivity(intent);
+                    }
+                    else {
+                        Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
+                        intent.putExtra("sum1", sum1);
+                        intent.putExtra("sum2", sum2);
+                        startActivity(intent);
+                    }
 
                 }
 
@@ -60,6 +69,9 @@ public class MT3Activity extends AppCompatActivity {
         }
         if(myOption3.isChecked()){
             sum3 = 1;
+        }
+        if(sum3 == -1){
+            Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
         }
 //        ans = String.valueOf(sum3);
         Toast.makeText(getApplicationContext(),sum1 + ""+sum2 + ""+sum3+"",Toast.LENGTH_LONG).show();
