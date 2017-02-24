@@ -26,10 +26,10 @@
             android:id="@+id/Posts"
             android:icon="@drawable/ic_content"
             android:title="กระทู้" />
-        <item
-            android:id="@+id/touch"
-            android:icon="@drawable/ic_pan"
-            android:title=""/>
+        <!--<item-->
+            <!--android:id="@+id/touch"-->
+            <!--android:icon="@drawable/ic_pan"-->
+            <!--android:title=""/>-->
     </group>
 
     <item android:title="Communicate">

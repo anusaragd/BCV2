@@ -20,6 +20,7 @@ import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.R;
 
 import java.text.DateFormat;
@@ -70,7 +71,7 @@ public class Alarm extends BroadcastReceiver {
             String currentTime = hour.format(new Date());
 
             if (getTime(context).equals(currentDate+currentTime)) {
-                Intent it = new Intent(context, SetAlarmActivity.class);
+                Intent it = new Intent(context, MTestActivity.class);
                 createNotification(context, it, "new mensage", "BREAST-CANCER", "ได้เวลาตรวจความผิดปกติแล้ว");
             }
         } catch (Exception e) {

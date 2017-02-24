@@ -22,6 +22,7 @@ public class TouchActivity extends AppCompatActivity {
     private GestureLibrary gLib;
     private static final String TAG = "gesture";
 
+    int sum1,sum2,sum3; //คำตอบ
     Button next;
 
     @Override
@@ -44,6 +45,9 @@ public class TouchActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (v.getId() == R.id.button6) {
                     Intent intent = new Intent(getApplicationContext(), finishTouchActivity.class);
+                    intent.putExtra("sum1", sum1);
+                    intent.putExtra("sum2", sum2);
+                    intent.putExtra("sum3", sum3);
                     startActivity(intent);
 
                 }

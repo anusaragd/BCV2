@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.anusara.bcv2.R;
+import com.example.anusara.bcv2.Touch.IntroTouchActivity;
 
 public class MT3Activity extends AppCompatActivity {
 
@@ -37,7 +38,8 @@ public class MT3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Condition(); // กำหนดค่าของปุ่ม
                 if (v.getId() == R.id.nextbutton) {
-                    Intent intent = new Intent(getApplicationContext(), MT4Activity.class);
+                    Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
+//                    Intent intent = new Intent(getApplicationContext(), MT4Activity.class);
                     intent.putExtra("sum1", sum1);
                     intent.putExtra("sum2", sum2);
                     intent.putExtra("sum3", sum3);

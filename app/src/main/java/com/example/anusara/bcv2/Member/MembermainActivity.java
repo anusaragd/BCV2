@@ -124,9 +124,9 @@ public class MembermainActivity extends AppCompatActivity
                 intent.putExtra("username", user);
                 startActivity(intent);
 
-            } else if (id == R.id.touch) {
-                Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
-                startActivity(intent);
+//            } else if (id == R.id.touch) {
+//                Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
+//                startActivity(intent);
 
             } else if (id == R.id.help) {
                 Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
