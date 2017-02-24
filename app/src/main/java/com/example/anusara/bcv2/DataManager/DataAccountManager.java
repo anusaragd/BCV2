@@ -6,6 +6,7 @@ package com.example.anusara.bcv2.DataManager;
 public class DataAccountManager {
     private String username;
 
+
     private static DataAccountManager instance;
 
     public static DataAccountManager getInstance() {

@@ -1,5 +1,7 @@
 package com.example.anusara.bcv2.Member.MComment;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
 import com.example.anusara.bcv2.DataManager.DataAccountManager;
@@ -15,6 +18,7 @@ import com.example.anusara.bcv2.Member.Questionnaire.MQuestionActivity;
 import com.example.anusara.bcv2.R;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
@@ -28,6 +32,12 @@ public class CommentActivity extends AppCompatActivity {
     Button sub,can ;
     String user, id ;
 
+    private Calendar cal;
+    private int day;
+    private int month;
+    private int year;
+    private EditText et;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +46,12 @@ public class CommentActivity extends AppCompatActivity {
 
         user = DataAccountManager.getInstance().getUsername();
         id = getIntent().getStringExtra("p_id");
+        Log.e( "onCreate: ", id);
+
+        cal = Calendar.getInstance();
+        day = cal.get(Calendar.DAY_OF_MONTH);
+        month = cal.get(Calendar.MONTH);
+        year = cal.get(Calendar.YEAR);
 
         comment = (EditText)findViewById(R.id.comment);
         sub = (Button)findViewById(R.id.button8);
@@ -93,14 +109,32 @@ public class CommentActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    @Deprecated
+    protected Dialog onCreateDialog(int id) {
+        return new DatePickerDialog(this, datePickerListener, year, month, day);
+    }
+
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+            et.setText(selectedDay + " / " + (selectedMonth + 1) + " / "
+                    + selectedYear);
+        }
+    };
+
     public class getHttp {
         OkHttpClient client = new OkHttpClient();
+
+
 
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("username", user)
                 .addFormDataPart("p_id", id)
                 .addFormDataPart("c_message", comment.getText().toString())
+                .addFormDataPart("c_date",cal.getTime().toString())
                 .build();
 
         String run(String url) throws IOException {

@@ -37,8 +37,10 @@ public class MPostActivity extends AppCompatActivity {
     String user;
 
 
+    ArrayList<String> listid = new ArrayList<>();
     ArrayList<String> listname = new ArrayList<>();
     ArrayList<String> listcontent = new ArrayList<>();
+    ArrayList<String> listdate = new ArrayList<>();
     ArrayAdapter<String> adapter;
 
 
@@ -67,8 +69,10 @@ public class MPostActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MPostActivity.this,MPostShowActivity.class);
                 intent.putExtra("username",user);
+                intent.putExtra("p_id",listid.get(position));
                 intent.putExtra("name", listname.get(position));
                 intent.putExtra("content", listcontent.get(position));
+                intent.putExtra("date", listdate.get(position));
                 startActivityForResult(intent, 1);
 //based on item add info to intent
 //                startActivity(intent);
@@ -107,13 +111,14 @@ public class MPostActivity extends AppCompatActivity {
 //                    response = http.run("http://192.168.1.2/breast-cancer/post.php");
 //                    response = http.run("http://192.168.43.180/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.37/breast-cancer/post.php");
-                    response = http.run("http://10.10.11.105/breast-cancer/post.php");
+                    //response = http.run("http://10.10.11.105/breast-cancer/post.php");
                     response = http.run("http://192.168.1.33/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.5/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.43/breast-cancer/post.php");
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
+                    Log.e( "doInBackground: ", response );
                 }
                 return response;
             }
@@ -128,14 +133,17 @@ public class MPostActivity extends AppCompatActivity {
 
                     for(int i=0; i<jsonArray.length(); i++){
                         JSONObject json_data = jsonArray.getJSONObject(i);
+                        listid.add(i, json_data.getString("p_id"));
                         listname.add(i, json_data.getString("p_name"));
                         listcontent.add(i, json_data.getString("p_content"));
+                        listdate.add(i, json_data.getString("p_date"));
                         Log.e( "json_data: ", json_data.getString("p_name"));
 
 
                     }
+                    Log.e( "onPostExecute: ", string);
 
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 //adapter.notifyDataSetChanged();

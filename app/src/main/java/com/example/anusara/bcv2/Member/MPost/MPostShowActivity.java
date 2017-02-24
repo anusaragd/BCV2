@@ -45,6 +45,8 @@ public class MPostShowActivity extends AppCompatActivity {
 
         id = getIntent().getStringExtra("p_id");
 
+        Log.e("onCreate: ", id+"");
+
         user = DataAccountManager.getInstance().getUsername();
 
         listView = (ListView) findViewById(R.id.listView2);
@@ -70,7 +72,7 @@ public class MPostShowActivity extends AppCompatActivity {
 
         name = getIntent().getStringExtra("name");
         content = getIntent().getStringExtra("content");
-        date = getIntent().getStringExtra("p_date");
+        date = getIntent().getStringExtra("date");
 
         text1 = (TextView) findViewById(R.id.textView11);
         text1.setText(name);
@@ -91,7 +93,7 @@ public class MPostShowActivity extends AppCompatActivity {
                 String response = null;
                 try {
 //                    response = http.run("http://192.168.43.180/breast-cancer/postcomment.php");
-                    response = http.run("http://10.10.11.105/breast-cancer/postcomment.php");
+      //              response = http.run("http://10.10.11.105/breast-cancer/postcomment.php");
                     response = http.run("http://192.168.1.33/breast-cancer/postcomment.php");
 //                    response = http.run("http://192.168.1.5/breast-cancer/postcomment.php");
 //                    response = http.run("http://192.168.1.37/breast-cancer/postcomment.php");
@@ -116,6 +118,7 @@ public class MPostShowActivity extends AppCompatActivity {
                         JSONObject json_data = jsonArray.getJSONObject(i);
                         listname.add(i, json_data.getString("c_message"));
                         listcontent.add(i, json_data.getString("username"));
+                        listdate.add(i, json_data.getString("c_date"));
                         Log.e( "json_data: ", json_data.getString("c_message"));
 
 
