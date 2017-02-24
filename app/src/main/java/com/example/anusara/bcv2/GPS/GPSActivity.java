@@ -87,6 +87,7 @@ public class GPSActivity extends FragmentActivity implements OnMapReadyCallback 
                         String name = c.getString("name");
                         String vicinity = c.getString("vicinity");
 
+
                         // tmp hash map for single contact
                         HashMap<String, String> contact = new HashMap<>();
 

@@ -33,14 +33,18 @@ import com.example.anusara.bcv2.Member.MPost.MPostActivity;
 import com.example.anusara.bcv2.Member.MPost.MPostaddActivity;
 import com.example.anusara.bcv2.R;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import static android.R.attr.start;
 
 public class SetAlarmActivity extends AppCompatActivity {
 
     Button submit;
 
+//    Date date;
     String date;
     String time;
 
@@ -64,6 +68,7 @@ public class SetAlarmActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 tv3.setText(date + "  " + time);
                 saveTime(date+time);
             }
@@ -111,12 +116,38 @@ public class SetAlarmActivity extends AppCompatActivity {
                               int dayOfMonth) {
 
             tv1.setText(String.format("%02d", dayOfMonth)
-                    + "/" + String.format("%02d", monthOfYear)
+                    + "/" + String.format("%02d", monthOfYear + 1)
                     + "/" + year);
 
-            date = tv1.getText().toString();
+//            date = tv1.getText().toString();
+//            Log.e("showDatePickerDialog: ", date);
+//        }
+//    }
+            String startTime = tv1.getText().toString();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            Date datetmp  = new Date();
+            try {
+                Date date1 = dateFormat.parse(startTime);
+                datetmp = date1;
 
-            Log.e("showDatePickerDialog: ", date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            Calendar c = Calendar.getInstance();
+            try {
+                c.setTime(datetmp);
+                c.add(Calendar.DATE, 5);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            Log.e("showDatePickerDialog: ", c.getTime().toString());
+
+
+
+            date = dateFormat.format(c.getTime());
+
         }
     }
 

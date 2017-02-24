@@ -32,7 +32,7 @@ public class BroadcastManager extends BroadcastReceiver {
             DateFormat hour = new SimpleDateFormat("HH:mm:ss");
 //            if (date.equals(yourDate) && hour.equals(yourHour)){
                 Intent it =  new Intent(context, SetAlarmActivity.class);
-                createNotification(context, it, "new mensage", "body!", "this is a mensage");
+                createNotification(context, it, "new mensage", "body111!", "this is a mensage");
 //            }
         }catch (Exception e){
             Log.i("date","error == "+e.getMessage());

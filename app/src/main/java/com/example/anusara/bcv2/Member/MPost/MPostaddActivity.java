@@ -66,8 +66,8 @@ public class MPostaddActivity extends AppCompatActivity {
 //                            response = http.run("http://192.168.43.180/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.2/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.37/breast-cancer/insert2.php");
-//                            response = http.run("http://10.10.11.105[ji/breast-cancer/insert2.php");
-                            response = http.run("http://192.168.1.33/breast-cancer/insert2.php");
+                            response = http.run("http://10.10.11.105/breast-cancer/insert2.php");
+//                            response = http.run("http://192.168.1.33/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.5/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.43/breast-cancer/insert2.php");
 //                            response = http.run("http://172.19.237.81/breast-cancer/insert2.php");

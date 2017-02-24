@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
@@ -68,10 +69,13 @@ public class DatePickerFragment extends DialogFragment
         c.set(year,month,day);
         //this.dayofweek = c.get(Calendar.DAY_OF_WEEK);
         this.year=year;
-        this.month=month+1;
+        this.month=month;
         this.day=day;
-        tv1.setText(this.day + "/" + this.month + "/" + this.year);
+        tv1.setText(this.day + "/" + (month+1) + "/" + this.year);
+        Log.v("date",this.month+"");
         TextView tva = (TextView)getActivity().findViewById(R.id.textView3);
+
+        System.out.print(month);
 
 
 

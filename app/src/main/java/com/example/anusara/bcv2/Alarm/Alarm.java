@@ -71,7 +71,7 @@ public class Alarm extends BroadcastReceiver {
 
             if (getTime(context).equals(currentDate+currentTime)) {
                 Intent it = new Intent(context, SetAlarmActivity.class);
-                createNotification(context, it, "new mensage", "body!", "this is a mensage");
+                createNotification(context, it, "new mensage", "body333!", "this is a mensage");
             }
         } catch (Exception e) {
             Log.i("date", "error == " + e.getMessage());
