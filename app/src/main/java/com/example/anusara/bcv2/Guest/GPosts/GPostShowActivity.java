@@ -36,6 +36,7 @@ public class GPostShowActivity extends AppCompatActivity {
 
     ArrayList<String> listname = new ArrayList<>();
     ArrayList<String> listcontent = new ArrayList<>();
+    ArrayList<String> listdate = new ArrayList<>();
     ArrayAdapter<String> adapter;
 
     @Override
@@ -100,6 +101,7 @@ public class GPostShowActivity extends AppCompatActivity {
                         JSONObject json_data = jsonArray.getJSONObject(i);
                         listname.add(i, json_data.getString("c_message"));
                         listcontent.add(i, json_data.getString("username"));
+                        listdate.add(i, json_data.getString("c_date"));
                         Log.e( "json_data: ", json_data.getString("c_message"));
 
 

@@ -35,8 +35,10 @@ public class GPostActivity extends AppCompatActivity {
 
 
 
+    ArrayList<String> listid = new ArrayList<>();
     ArrayList<String> listname = new ArrayList<>();
     ArrayList<String> listcontent = new ArrayList<>();
+    ArrayList<String> listdate = new ArrayList<>();
     ArrayAdapter<String> adapter;
 
     @Override
@@ -59,8 +61,10 @@ public class GPostActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(GPostActivity.this,GPostShowActivity.class);
+                intent.putExtra("p_id",listid.get(position));
                 intent.putExtra("name", listname.get(position));
                 intent.putExtra("content", listcontent.get(position));
+                intent.putExtra("date", listdate.get(position));
                 startActivityForResult(intent, 1);
 //based on item add info to intent
 //                startActivity(intent);
@@ -107,6 +111,8 @@ public class GPostActivity extends AppCompatActivity {
                         JSONObject json_data = jsonArray.getJSONObject(i);
                         listname.add(i, json_data.getString("p_name"));
                         listcontent.add(i, json_data.getString("p_content"));
+                        listcontent.add(i, json_data.getString("p_content"));
+                        listdate.add(i, json_data.getString("p_date"));
                         Log.e( "json_data: ", json_data.getString("p_name"));
 
 
