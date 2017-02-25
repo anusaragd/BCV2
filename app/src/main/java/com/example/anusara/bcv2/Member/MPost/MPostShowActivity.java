@@ -57,7 +57,8 @@ public class MPostShowActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), CommentActivity.class);
                     intent.putExtra("p_id",id);
                     intent.putExtra("username",user);
-                    startActivity(intent);
+                    startActivityForResult(intent, 1);
+//                    startActivity(intent);
 
                 }
 
@@ -151,9 +152,11 @@ public class MPostShowActivity extends AppCompatActivity {
         if (requestCode == 1) {
             //adapter.notifyDataSetChanged();
             getList();
+            finish();
 
             Log.e("onActivityResult: ", "doo");
 
         }
     }
+
 }

@@ -132,10 +132,10 @@ public class MembermainActivity extends AppCompatActivity
                 Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
                 startActivity(intent);
 
-//            } else if (id == R.id.nav_send) {
-//                Intent intent = new Intent(getApplicationContext(), Logout.class);
-//                startActivity(intent);
-//
+            } else if (id == R.id.nav_send) {
+                Intent intent = new Intent(getApplicationContext(), Logout.class);
+                intent.putExtra("username", user);
+                startActivity(intent);
             }
         }
 

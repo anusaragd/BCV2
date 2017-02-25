@@ -146,5 +146,10 @@ public class CommentActivity extends AppCompatActivity {
             return response.body().string();
         }
     }
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        finish();
+    }
 
 }

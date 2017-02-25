@@ -163,5 +163,11 @@ public class SetAlarmActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        finish();
+    }
+
 
 }

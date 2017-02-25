@@ -123,6 +123,13 @@ public class MTSumActivity extends AppCompatActivity {
         textShow.setText(ANS);
     }
 
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        finish();
+    }
+
+
 
 
     public int getSum1() {

@@ -18,6 +18,13 @@ public class GAnsQuesActivity extends AppCompatActivity {
     TextView textShow, txtResult;
     Button btn1,btn2;
 
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        finish();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

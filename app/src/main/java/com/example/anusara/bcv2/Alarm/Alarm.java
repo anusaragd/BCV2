@@ -111,4 +111,12 @@ public class Alarm extends BroadcastReceiver {
         Log.e( "getTime: ", time);
         return time;
     }
+
+
+//    @Override
+//    public void onBackPressed() {
+////        super.onBackPressed();
+//        finish();
+//    }
+
 }

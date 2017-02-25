@@ -22,6 +22,8 @@ public class GQuestionActivity extends AppCompatActivity {
     Button btn1, btn2;
     TextView textShow;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +84,7 @@ public class GQuestionActivity extends AppCompatActivity {
                         intent.putExtra("sum4", sum4);
                         intent.putExtra("sum5", sum5);
                         intent.putExtra("sum6", sum6);
-                        startActivity(intent);
+                        startActivityForResult(intent, 0);
                     }
                     if(sum1 == -1 || sum2 == -1 || sum3 == -1 || sum4 == -1 || sum5 == -1 || sum6 == -1) {
                         Intent intent = new Intent(getApplicationContext(), GQuestionActivity.class);
@@ -93,8 +95,15 @@ public class GQuestionActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 0) {
+           finish();
+        }
+    }//onActivityResult
+
     public void Condition1() {
         if (myOption1.isChecked()) {
             sum1 = 1;
@@ -172,5 +181,6 @@ public class GQuestionActivity extends AppCompatActivity {
 //        Toast.makeText(getApplicationContext(),sum1 + ""+sum2 + ""+sum3 + ""+sum4 + ""+sum5 + ""+sum6 + "",Toast.LENGTH_LONG).show();
 
     }
+
 }
 
