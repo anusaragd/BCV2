@@ -50,7 +50,7 @@ public class MT6Activity extends AppCompatActivity {
                         startActivity(intent);
                     }
                     else {
-                        Intent intent = new Intent(getApplicationContext(), MTSumActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), MT6Activity.class);
                         intent.putExtra("sum1", sum1);
                         intent.putExtra("sum2", sum2);
                         intent.putExtra("sum3", sum3);

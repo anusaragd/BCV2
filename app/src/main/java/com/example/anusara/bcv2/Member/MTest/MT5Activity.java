@@ -48,7 +48,7 @@ public class MT5Activity extends AppCompatActivity {
                         startActivity(intent);
                     }
                     else {
-                        Intent intent = new Intent(getApplicationContext(), MT6Activity.class);
+                        Intent intent = new Intent(getApplicationContext(), MT5Activity.class);
                         intent.putExtra("sum1", sum1);
                         intent.putExtra("sum2", sum2);
                         intent.putExtra("sum3", sum3);

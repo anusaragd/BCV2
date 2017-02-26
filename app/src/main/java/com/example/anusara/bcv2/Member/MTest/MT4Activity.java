@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.anusara.bcv2.R;
+import com.example.anusara.bcv2.Touch.IntroTouchActivity;
 
 public class MT4Activity extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class MT4Activity extends AppCompatActivity {
 
         myOption1 = (RadioButton) findViewById(R.id.radioButton);
         myOption2 = (RadioButton) findViewById(R.id.radioButton2);
-        myOption3 = (RadioButton) findViewById(R.id.radioButton3);
+      //  myOption3 = (RadioButton) findViewById(R.id.radioButton3);
 
 //        Condition(); // กำหนดค่าของปุ่ม
 
@@ -39,7 +40,7 @@ public class MT4Activity extends AppCompatActivity {
                 Condition(); // กำหนดค่าของปุ่ม
                 if (v.getId() == R.id.nextbutton) {
                     if(sum4 != -1) {
-                        Intent intent = new Intent(getApplicationContext(), MT5Activity.class);
+                        Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
                         intent.putExtra("sum1", sum1);
                         intent.putExtra("sum2", sum2);
                         intent.putExtra("sum3", sum3);
@@ -47,7 +48,7 @@ public class MT4Activity extends AppCompatActivity {
                         startActivity(intent);
                     }
                     else {
-                        Intent intent = new Intent(getApplicationContext(), MT5Activity.class);
+                        Intent intent = new Intent(getApplicationContext(), MT4Activity.class);
                         intent.putExtra("sum1", sum1);
                         intent.putExtra("sum2", sum2);
                         intent.putExtra("sum3", sum3);
@@ -62,14 +63,14 @@ public class MT4Activity extends AppCompatActivity {
     }
     public void Condition(){
         if(myOption1.isChecked()){
-            sum4 = 0;
-        }
-        if(myOption2.isChecked()){
             sum4 = 2;
         }
-        if(myOption3.isChecked()){
-            sum4 = 1;
+        if(myOption2.isChecked()){
+            sum4 = 0;
         }
+//        if(myOption3.isChecked()){
+//            sum4 = 1;
+//        }
         if(sum4 == -1){
             Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
         }

@@ -10,6 +10,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.anusara.bcv2.Member.MTest.MT1Activity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/ttr1"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+
     <Button
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -29,41 +38,41 @@
         android:layout_above="@+id/nextbutton"
         android:layout_centerHorizontal="true">
 
+
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ผิดปกติ"
-            android:id="@+id/radio2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="24dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ปกติ สีผิวขนาดยังเหมือนเดิม"
+        android:id="@+id/radio1"
+        android:layout_below="@+id/textView24"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ไม่แน่ใจพึ่งเคยสังเกตครั้งแรก"
+        android:id="@+id/radio3"
+        android:layout_below="@+id/radio2"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ผิดปกติ สีผิวและขนาดเปลี่ยนไป"
+        android:id="@+id/radio2"
+        android:layout_below="@+id/radio1"
+        android:layout_alignParentStart="true" />
 
     </RadioGroup>
 
-    <RadioButton
+    <TextView
+        android:text="1. ยืนหน้ากระจกสังเกตความเปลี่ยนแปลงของขนาดรูปร่าง สีผิว ตำแหน่งของเต้านมและหัวนม"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ปกติ"
-        android:id="@+id/radio1"
-        android:layout_alignBottom="@+id/radioGroup1"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="21dp" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ไม่แน่ใจ"
-        android:id="@+id/radio3"
-        android:layout_alignBottom="@+id/radioGroup1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="26dp" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:src="@drawable/t1"
-        android:id="@+id/imageView2"
-        android:layout_alignParentTop="true"
+        android:id="@+id/textView24"
+        android:textSize="16sp"
+        android:layout_above="@+id/radioGroup1"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>

@@ -13,49 +13,9 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/t4"
+        android:src="@drawable/ttr6"
         android:id="@+id/imageView2" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imageView2"
-        android:layout_marginTop="220dp" >
-
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ปกติ"
-            android:id="@+id/radioButton"
-            android:layout_below="@+id/imageView2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="47dp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ผิดปกติ"
-            android:id="@+id/radioButton2"
-            android:layout_below="@+id/radioButton"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="24dp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ไม่แน่ใจ"
-            android:id="@+id/radioButton3"
-            android:layout_marginTop="25dp"
-            android:layout_below="@+id/radioButton2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-    </RadioGroup>
     <Button
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -64,8 +24,50 @@
         android:textColor="#FFFFFF"
         android:background="#FF5252"
         android:id="@+id/nextbutton"
-        android:layout_below="@+id/radioGroup4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="4. ใช้นิ้วมือบีบที่หัวนมเบาๆ ดูว่ามีเลือด หนอง หรือน้ำไหลออกจากหัวนมหรือไม่"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView27"
+        android:textSize="16sp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textView27"
+        android:layout_centerHorizontal="true">
+
+
+
+
+
+
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="มี"
+        android:id="@+id/radioButton"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/textView27"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ไม่มี"
+        android:id="@+id/radioButton2"
+        android:layout_below="@+id/radioButton"
+        android:layout_alignParentStart="true" />
+
+    </RadioGroup>
 
 </RelativeLayout>

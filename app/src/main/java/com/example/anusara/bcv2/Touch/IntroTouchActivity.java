@@ -14,7 +14,7 @@ import com.example.anusara.bcv2.R;
 public class IntroTouchActivity extends AppCompatActivity {
 
     Button next;
-    int sum1,sum2,sum3; //คำตอบ
+    int sum1,sum2,sum3,sum4; //คำตอบ
 //    RadioButton myOption1, myOption2, myOption3; //ปลุกกด
 
     @Override
@@ -34,6 +34,7 @@ public class IntroTouchActivity extends AppCompatActivity {
                     intent.putExtra("sum1", sum1);
                     intent.putExtra("sum2", sum2);
                     intent.putExtra("sum3", sum3);
+                    intent.putExtra("sum4", sum4);
                     startActivity(intent);
 
                 }
