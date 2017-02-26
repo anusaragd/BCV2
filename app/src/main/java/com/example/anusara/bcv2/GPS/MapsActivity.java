@@ -128,20 +128,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .title("เซ็นทรัลเมดิกเกษตรคลินิกเวชกรรม")
                 .snippet("งามวงศ์วาน บางเขน จตุจักร กทม. 10900"));
 
-//        mMap.addMarker(new MarkerOptions()
-//                .position(new LatLng(13.9047413, 100.5242884))
-//                .title("โรงพยาบาลเวิลด์เมดิคอลเซ็นเตอร์ /n 44 หมู่ 4, ถนนแจ้งวัฒนะ, ตำบลปากเกร็ด อำเภอปากเกร็ด จังหวัดนนทบุรี, 11120")
-//                .snippet("SNIPPET"));
-//
-//        mMap.addMarker(new MarkerOptions()
-//                .position(new LatLng(13.9047413, 100.5242884))
-//                .title("โรงพยาบาลเวิลด์เมดิคอลเซ็นเตอร์ /n 44 หมู่ 4, ถนนแจ้งวัฒนะ, ตำบลปากเกร็ด อำเภอปากเกร็ด จังหวัดนนทบุรี, 11120")
-//                .snippet("SNIPPET"));
-//
-//        mMap.addMarker(new MarkerOptions()
-//                .position(new LatLng(13.9047413, 100.5242884))
-//                .title("โรงพยาบาลเวิลด์เมดิคอลเซ็นเตอร์ /n 44 หมู่ 4, ถนนแจ้งวัฒนะ, ตำบลปากเกร็ด อำเภอปากเกร็ด จังหวัดนนทบุรี, 11120")
-//                .snippet("SNIPPET"));
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(13.8354342,100.5720043))
+                .title("ร.พ.เมโย")
+                .snippet("2012/5 - 7  ถ.พหลโยธิน  ลาดยาว  จตุจักร  กรุงเทพฯ  10900"));
+
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(13.8462666,100.5598798))
+                .title("ร.พ.วิภาวดี 1")
+                .snippet("51/3  ถ.งามวงศ์วาน    จตุจักร  กรุงเทพฯ  10900 "));
+
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(13.6816042,100.4725233))
+                .title("ร.พ.บางปะกอก 9 อินเตอร์เนชั่นแนล")
+                .snippet("SNIPPET"));
+
 //        mMap.addMarker(new MarkerOptions()
 //                .position(new LatLng(13.9047413, 100.5242884))
 //                .title("โรงพยาบาลเวิลด์เมดิคอลเซ็นเตอร์ /n 44 หมู่ 4, ถนนแจ้งวัฒนะ, ตำบลปากเกร็ด อำเภอปากเกร็ด จังหวัดนนทบุรี, 11120")

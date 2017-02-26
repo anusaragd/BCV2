@@ -10,12 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.anusara.bcv2.Member.MTest.MT1Activity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:src="@drawable/t1"
-        android:id="@+id/imageView2" />
-
     <Button
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -63,5 +57,13 @@
         android:layout_alignBottom="@+id/radioGroup1"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="26dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/t1"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

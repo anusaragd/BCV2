@@ -15,7 +15,9 @@ import android.view.MenuItem;
 import com.example.anusara.bcv2.About.AboutActivity;
 import com.example.anusara.bcv2.Alarm.SetAlarmActivity;
 import com.example.anusara.bcv2.GPS.GPSActivity;
+import com.example.anusara.bcv2.GPS.MapsActivity;
 import com.example.anusara.bcv2.HelpActivity;
+import com.example.anusara.bcv2.MainActivity;
 import com.example.anusara.bcv2.Member.MPost.MPostActivity;
 import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.Member.Questionnaire.MQuestionActivity;
@@ -115,7 +117,7 @@ public class MembermainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.gps) {
-            Intent intent = new Intent(getApplicationContext(), GPSActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
             startActivity(intent);
 
         } else {
@@ -133,7 +135,7 @@ public class MembermainActivity extends AppCompatActivity
                 startActivity(intent);
 
             } else if (id == R.id.nav_send) {
-                Intent intent = new Intent(getApplicationContext(), Logout.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.putExtra("username", user);
                 startActivity(intent);
             }
