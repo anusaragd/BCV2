@@ -45,20 +45,20 @@ public class TouchActivity extends AppCompatActivity {
 
 
         next = (Button) findViewById(R.id.button6);
-        next.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (v.getId() == R.id.button6) {
-                    Intent intent = new Intent(getApplicationContext(), finishTouchActivity.class);
-                    intent.putExtra("sum1", sum1);
-                    intent.putExtra("sum2", sum2);
-                    intent.putExtra("sum3", sum3);
-                    intent.putExtra("sum4", sum4);
-                    startActivity(intent);
-
-                }
-
-            }
-        });
+//        next.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                if (v.getId() == R.id.button6) {
+//                    Intent intent = new Intent(getApplicationContext(), finishTouchActivity.class);
+//                    intent.putExtra("sum1", sum1);
+//                    intent.putExtra("sum2", sum2);
+//                    intent.putExtra("sum3", sum3);
+//                    intent.putExtra("sum4", sum4);
+//                    startActivity(intent);
+//
+//                }
+//
+//            }
+//        });
     }
 
     /**
@@ -77,10 +77,25 @@ public class TouchActivity extends AppCompatActivity {
                 // checking prediction
                 if (prediction.score > 1.0) {
                     // and action
-                    Toast.makeText(TouchActivity.this,"Correct",
+                    Toast.makeText(TouchActivity.this,"ถูกต้องค่ะ",
                             Toast.LENGTH_SHORT).show();
+
+                    next.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            if (v.getId() == R.id.button6) {
+                                Intent intent = new Intent(getApplicationContext(), finishTouchActivity.class);
+                                intent.putExtra("sum1", sum1);
+                                intent.putExtra("sum2", sum2);
+                                intent.putExtra("sum3", sum3);
+                                intent.putExtra("sum4", sum4);
+                                startActivity(intent);
+
+                            }
+
+                        }
+                    });
                 }else {
-                    Toast.makeText(TouchActivity.this,"InCorrect",
+                    Toast.makeText(TouchActivity.this,"ลองใหม่อีกครั้งนะคะ",
                             Toast.LENGTH_SHORT).show();
                 }
             }
