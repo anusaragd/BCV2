@@ -14,7 +14,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/small"
+        app:srcCompat="@drawable/smallll"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:id="@+id/imageView3" />
@@ -29,16 +29,6 @@
         android:layout_toEndOf="@+id/imageView3"
         android:layout_marginBottom="47dp"
         android:textSize="16sp" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/threefingers"
-        android:id="@+id/imageView6"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/imageView3"
-        android:layout_alignParentEnd="true" />
 
     <TextView
         android:text="ก่อนอื่น ชูนิ้วขึ้นมา 3 นิ้ว แบบนี้"
@@ -62,7 +52,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/thumb"
+        app:srcCompat="@drawable/tyutt"
         android:id="@+id/imageView7"
         android:layout_marginTop="13dp"
         android:layout_below="@+id/textView8"
@@ -84,6 +74,15 @@
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/textView9"
         android:id="@+id/button3" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/treefin"
+        android:id="@+id/imageView6"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textView6"
+        android:layout_toEndOf="@+id/imageView7" />
 
 
 </RelativeLayout>
