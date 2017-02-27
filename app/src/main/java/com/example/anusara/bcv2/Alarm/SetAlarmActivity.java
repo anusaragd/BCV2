@@ -27,6 +27,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.anusara.bcv2.MainActivity;
 import com.example.anusara.bcv2.Member.MPost.MPostActivity;
@@ -69,8 +70,17 @@ public class SetAlarmActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                tv3.setText(date + "  " + time);
-                saveTime(date+time);
+                    tv3.setText(date + "  " + time);
+                    saveTime(date + time);
+
+                if(time == null){
+                    tv3.setText("กรุณาตั้งวันเวลาค่ะ");
+                }
+
+//                if(tv3 == null){
+//                    tv3.setText("กรุณาตั้งเวลาก่อนนะ");
+////                    Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
     }
@@ -107,6 +117,8 @@ public class SetAlarmActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = getSharedPreferences("time_alarm", MODE_PRIVATE).edit();
         Log.e( "saveTime: ", time);
         editor.putString("dateTime", time);
+
+
         editor.commit();
     }
 

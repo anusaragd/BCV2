@@ -50,12 +50,17 @@ public class GPostActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
 //        btn1 = (FloatingActionButton) findViewById(R.id.postbutton);
 //        btn1.setOnClickListener(this);
+
+
+
+
         adapter = new ArrayAdapter<String>( this,
                 android.R.layout.simple_list_item_1, listname);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        getList();
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -71,11 +76,7 @@ public class GPostActivity extends AppCompatActivity {
             }
 
 
-
-
         });
-
-        getList();
 
     }
     private void getList() {
@@ -102,7 +103,6 @@ public class GPostActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(String string) {
-                super.onPostExecute(string);
                 try {
                     listname.clear();
 
@@ -111,7 +111,7 @@ public class GPostActivity extends AppCompatActivity {
                     for(int i=0; i<jsonArray.length(); i++){
                         JSONObject json_data = jsonArray.getJSONObject(i);
                         listname.add(i, json_data.getString("p_name"));
-                        listcontent.add(i, json_data.getString("p_content"));
+                        listid.add(i, json_data.getString("p_id"));
                         listcontent.add(i, json_data.getString("p_content"));
                         listdate.add(i, json_data.getString("p_date"));
                         Log.e( "json_data: ", json_data.getString("p_name"));
@@ -119,12 +119,14 @@ public class GPostActivity extends AppCompatActivity {
 
                     }
 
+                    adapter.notifyDataSetChanged();
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 //adapter.notifyDataSetChanged();
 
-                adapter.notifyDataSetChanged();
+
                 Log.e( "onPostExecute: ", string);
             }
         }.execute();
@@ -140,17 +142,17 @@ public class GPostActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // Check which request we're responding to
-        if (requestCode == 1) {
-            //adapter.notifyDataSetChanged();
-            getList();
-
-            Log.e("onActivityResult: ", "doo");
-
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        // Check which request we're responding to
+//        if (requestCode == 1) {
+//            //adapter.notifyDataSetChanged();
+//            getList();
+//
+//            Log.e("onActivityResult: ", "doo");
+//
+//        }
+//    }
 
 
 

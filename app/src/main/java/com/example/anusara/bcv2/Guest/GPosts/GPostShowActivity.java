@@ -42,6 +42,7 @@ public class GPostShowActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("onItemClick: ","aaaaaaaa" );
         setContentView(R.layout.activity_gpost_show);
 
         listView = (ListView) findViewById(R.id.listView2);
@@ -127,19 +128,19 @@ public class GPostShowActivity extends AppCompatActivity {
             return response.body().string();
         }
     }
+//
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // Check which request we're responding to
-        if (requestCode == 1) {
-            //adapter.notifyDataSetChanged();
-            getList();
-
-            Log.e("onActivityResult: ", "doo");
-
-        }
-    }
-
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        // Check which request we're responding to
+//        if (requestCode == 1) {
+//            //adapter.notifyDataSetChanged();
+//            getList();
+//
+//            Log.e("onActivityResult: ", "doo");
+//
+//        }
+//    }
 //
 //    @Override
 //    public void onBackPressed() {

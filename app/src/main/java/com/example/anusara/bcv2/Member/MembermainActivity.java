@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.anusara.bcv2.About.AboutActivity;
 import com.example.anusara.bcv2.Alarm.SetAlarmActivity;
@@ -30,6 +31,7 @@ public class MembermainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     String user;
+    TextView usernameit ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
