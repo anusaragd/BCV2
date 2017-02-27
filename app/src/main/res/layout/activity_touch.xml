@@ -22,9 +22,9 @@
         android:layout_height="500dp">
         <ImageView
             android:layout_width="fill_parent"
-            android:layout_height="450dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/thumb"
+            android:layout_height="550dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/touchhh"
             android:layout_marginBottom="80dp"/>
 
         <!--<TextView-->
@@ -35,7 +35,7 @@
         <android.gesture.GestureOverlayView
             android:id="@+id/gestures"
             android:layout_width="match_parent"
-            android:layout_height="405dp"
+            android:layout_height="495dp"
             >
 
         </android.gesture.GestureOverlayView>

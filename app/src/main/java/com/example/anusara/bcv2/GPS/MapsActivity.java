@@ -171,10 +171,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    @Override
-    public void onBackPressed() {
-//        super.onBackPressed();
-        finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+////        super.onBackPressed();
+//        finish();
+//    }
 
 }

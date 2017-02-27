@@ -65,9 +65,9 @@ public class GPostActivity extends AppCompatActivity {
                 intent.putExtra("name", listname.get(position));
                 intent.putExtra("content", listcontent.get(position));
                 intent.putExtra("date", listdate.get(position));
-                startActivityForResult(intent, 1);
+//                startActivityForResult(intent, 1);
 //based on item add info to intent
-//                startActivity(intent);
+                startActivity(intent);
             }
 
 
@@ -88,9 +88,9 @@ public class GPostActivity extends AppCompatActivity {
 //                    response = http.run("http://192.168.1.2/breast-cancer/post.php");
 //                    response = http.run("http://192.168.43.180/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.37/breast-cancer/post.php");
-                    response = http.run("http://192.168.1.33/breast-cancer/post.php");
+//                    response = http.run("http://192.168.1.33/breast-cancer/post.php");
 //                    response = http.run("http://103.253.73.77/anusara/post.php");
-//                    response = http.run("http://10.10.11.105/breast-cancer/post.php");
+                    response = http.run("http://10.10.11.105/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.5/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.43/breast-cancer/post.php");
                 } catch (IOException e) {
@@ -154,10 +154,10 @@ public class GPostActivity extends AppCompatActivity {
 
 
 
-    @Override
-    public void onBackPressed() {
-//        super.onBackPressed();
-        finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+////        super.onBackPressed();
+//        finish();
+//    }
 
 }

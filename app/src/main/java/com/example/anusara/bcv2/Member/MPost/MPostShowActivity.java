@@ -57,8 +57,8 @@ public class MPostShowActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), CommentActivity.class);
                     intent.putExtra("p_id",id);
                     intent.putExtra("username",user);
-                    startActivityForResult(intent, 1);
-//                    startActivity(intent);
+//                    startActivityForResult(intent, 1);
+                    startActivity(intent);
 
                 }
 
@@ -94,8 +94,8 @@ public class MPostShowActivity extends AppCompatActivity {
                 String response = null;
                 try {
 //                    response = http.run("http://192.168.43.180/breast-cancer/postcomment.php");
-      //              response = http.run("http://10.10.11.105/breast-cancer/postcomment.php");
-                    response = http.run("http://192.168.1.33/breast-cancer/postcomment.php");
+                    response = http.run("http://10.10.11.105/breast-cancer/postcomment.php");
+//                    response = http.run("http://192.168.1.33/breast-cancer/postcomment.php");
 //                    response = http.run("http://192.168.1.5/breast-cancer/postcomment.php");
 //                    response = http.run("http://192.168.1.37/breast-cancer/postcomment.php");
 //                    response = http.run("http://172.19.237.81/breast-cancer/postcomment.php");

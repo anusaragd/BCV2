@@ -51,7 +51,6 @@ public class AboutActivity extends AppCompatActivity {
                 Intent intent = new Intent(AboutActivity.this,ShowAboutActivity.class);
                 intent.putExtra("name", listname.get(position));
                 intent.putExtra("content", listcontent.get(position));
-//based on item add info to intent
                 startActivity(intent);
             }
 
@@ -70,9 +69,9 @@ public class AboutActivity extends AppCompatActivity {
                 try {
 //                    response = http.run("http://192.168.43.180/breast-cancer/postnews.php");
 //                    response = http.run("http://192.168.1.2/breast-cancer/postnews.php");
-//                    response = http.run("http://10.10.11.105/breast-cancer/postnews.php");
+                    response = http.run("http://10.10.11.105/breast-cancer/postnews.php");
 //                    response = http.run("http://192.168.1.37/breast-cancer/postnews.php");
-                    response = http.run("http://192.168.1.33/breast-cancer/postnews.php");
+//                    response = http.run("http://192.168.1.33/breast-cancer/postnews.php");
 //                    response = http.run("http://103.253.73.77/anusara/breast-cancer/postnews.php");
                 } catch (IOException e) {
                     // TODO Auto-generated catch block

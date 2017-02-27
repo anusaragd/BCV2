@@ -42,7 +42,6 @@ public class ShowAboutActivity extends AppCompatActivity {
         ll.setOrientation(LinearLayout.VERTICAL);
         sv.addView(ll);
 
-        finish();
 
     }
 

@@ -73,9 +73,9 @@ public class MPostActivity extends AppCompatActivity {
                 intent.putExtra("name", listname.get(position));
                 intent.putExtra("content", listcontent.get(position));
                 intent.putExtra("date", listdate.get(position));
-                startActivityForResult(intent, 1);
+//                startActivityForResult(intent, 1);
 //based on item add info to intent
-//                startActivity(intent);
+                startActivity(intent);
             }
 
 
@@ -111,8 +111,8 @@ public class MPostActivity extends AppCompatActivity {
 //                    response = http.run("http://192.168.1.2/breast-cancer/post.php");
 //                    response = http.run("http://192.168.43.180/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.37/breast-cancer/post.php");
-                    //response = http.run("http://10.10.11.105/breast-cancer/post.php");
-                    response = http.run("http://192.168.1.33/breast-cancer/post.php");
+                    response = http.run("http://10.10.11.105/breast-cancer/post.php");
+//                    response = http.run("http://192.168.1.33/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.5/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.43/breast-cancer/post.php");
                 } catch (IOException e) {
