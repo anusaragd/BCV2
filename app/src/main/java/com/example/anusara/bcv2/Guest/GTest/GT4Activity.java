@@ -17,7 +17,7 @@ public class GT4Activity extends AppCompatActivity {
     RadioButton myOption1, myOption2, myOption3; //ปลุกกด
     Button btn1;
     String ans; //เก็บผลลัพธ์
-    int sum1,sum2,sum3;
+    int sum1,sum2,sum3,sum5,sum6;
     int sum4 = -1; //คำตอบ
 
     @Override
@@ -28,6 +28,8 @@ public class GT4Activity extends AppCompatActivity {
         sum1 = getIntent().getIntExtra("sum1", 0);
         sum2 = getIntent().getIntExtra("sum2", 0);
         sum3 = getIntent().getIntExtra("sum3", 0);
+        sum5 = getIntent().getIntExtra("sum5", 0);
+        sum6 = getIntent().getIntExtra("sum6", 0);
 
         myOption1 = (RadioButton) findViewById(R.id.radioButton);
         myOption2 = (RadioButton) findViewById(R.id.radioButton2);
@@ -43,11 +45,12 @@ public class GT4Activity extends AppCompatActivity {
                     if(sum4 != -1) {
 //                        Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
 //                        Intent intent = new Intent(getApplicationContext(), MT5Activity.class);
-                        Intent intent = new Intent(getApplicationContext(), GTSumActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), GT5Activity.class);
                         intent.putExtra("sum1", sum1);
                         intent.putExtra("sum2", sum2);
                         intent.putExtra("sum3", sum3);
                         intent.putExtra("sum4", sum4);
+
                         startActivity(intent);
                     }
                     if(sum4 == -1) {

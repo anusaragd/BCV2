@@ -13,9 +13,9 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/ttr6"
-        android:id="@+id/imageView2" />
-
+        android:src="@drawable/ttr4"
+        android:id="@+id/imageView2"
+        android:layout_above="@+id/textView28" />
     <Button
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -27,24 +27,12 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:text="4. ใช้นิ้วมือบีบที่หัวนมเบาๆ ดูว่ามีเลือด หนอง หรือน้ำไหลออกจากหัวนมหรือไม่"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView27"
-        android:textSize="16sp"
-        android:layout_below="@+id/imageView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
-
     <RadioGroup
-        android:id="@+id/radioGroup4"
+        android:id="@+id/radioGroup5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/textView27"
-        android:layout_centerHorizontal="true">
-
+        android:layout_above="@+id/nextbutton"
+        android:layout_alignParentStart="true">
 
 
 
@@ -54,21 +42,37 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="มี"
-            android:id="@+id/radioButton"
-            android:layout_marginTop="13dp"
-            android:layout_below="@+id/textView27"
-            android:layout_alignParentStart="true" />
+            android:text="ไม่แน่ใจ"
+            android:id="@+id/radioButton3"
+            android:layout_alignBaseline="@+id/radioButton2"
+            android:layout_alignBottom="@+id/radioButton2"
+            android:layout_alignParentEnd="true" />
+
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ไม่มี"
+            android:text="คลำเจอก้อนแข็งๆ"
             android:id="@+id/radioButton2"
-            android:layout_below="@+id/radioButton"
-            android:layout_alignParentStart="true" />
+            android:layout_alignBottom="@+id/radioGroup5"
+            android:layout_toStartOf="@+id/radioButton3"
+            android:layout_marginEnd="11dp" />
 
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ไม่พบก้อนอะไรแข็งๆ"
+            android:id="@+id/radioButton"
+            android:layout_alignBottom="@+id/radioGroup5"
+            android:layout_toStartOf="@+id/radioButton2" />
     </RadioGroup>
 
-
+    <TextView
+        android:text="4. เริ่มคบำเต้านมตั้งแต่กระไหปลาร้าลงมา ให้ใช้นิ้วชี้ นิ้วกลาง และนิ้วนางทั้ง 3 นิ้ว ค่อยๆกดลงบนผิวหนังเบาๆ และกดแรงขึ้นคลำเต้านมให้ทั่วทุกทิศทาง ถึงบริเวณรักแร้ใต้วงแขน ดดยคลำเต้านมให้ครบทั้งสองข้างจนเสร็จ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView28"
+        android:textSize="16sp"
+        android:layout_above="@+id/radioGroup5"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

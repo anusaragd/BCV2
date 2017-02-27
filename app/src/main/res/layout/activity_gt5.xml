@@ -10,12 +10,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.anusara.bcv2.Guest.GTest.GT5Activity">
 
+
+
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/ttr4"
-        android:id="@+id/imageView2"
-        android:layout_above="@+id/textView28" />
+        android:src="@drawable/ttr5"
+        android:id="@+id/imageView2" />
     <Button
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -27,54 +29,49 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup5"
+    <TextView
+        android:text="5. เปลี่ยนเป็นคลำในท่านอนใช้หมอนหนุนไหล่ข้างที่จะทำ แล้วคลำซ้ำเหมือนท่ายืน"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/nextbutton"
-        android:layout_alignParentStart="true">
+        android:id="@+id/textView29"
+        android:textSize="16sp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentStart="true" />
 
+    <RadioGroup
+        android:id="@+id/radioGroup6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp">
 
-
-
-
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ไม่แน่ใจ"
-            android:id="@+id/radioButton3"
-            android:layout_alignBaseline="@+id/radioButton2"
-            android:layout_alignBottom="@+id/radioButton2"
-            android:layout_alignParentEnd="true" />
-
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="คลำเจอก้อนแข็งๆ"
-            android:id="@+id/radioButton2"
-            android:layout_alignBottom="@+id/radioGroup5"
-            android:layout_toStartOf="@+id/radioButton3"
-            android:layout_marginEnd="11dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ไม่พบก้อนอะไรแข็งๆ"
             android:id="@+id/radioButton"
-            android:layout_alignBottom="@+id/radioGroup5"
-            android:layout_toStartOf="@+id/radioButton2" />
+            android:layout_above="@+id/radioButton2"
+            android:layout_alignStart="@+id/radioButton2" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="คลำเจอก้อนแข็งๆ"
+            android:id="@+id/radioButton2"
+            android:layout_above="@+id/radioButton3" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ไม่แน่ใจ"
+            android:id="@+id/radioButton3"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="48dp" />
+
+
     </RadioGroup>
-
-    <TextView
-        android:text="5. เริ่มคบำเต้านมตั้งแต่กระไหปลาร้าลงมา ให้ใช้นิ้วชี้ นิ้วกลาง และนิ้วนางทั้ง 3 นิ้ว ค่อยๆกดลงบนผิวหนังเบาๆ และกดแรงขึ้นคลำเต้านมให้ทั่วทุกทิศทาง ถึงบริเวณรักแร้ใต้วงแขน ดดยคลำเต้านมให้ครบทั้งสองข้างจนเสร็จ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView28"
-        android:textSize="16sp"
-        android:layout_above="@+id/radioGroup5"
-        android:layout_alignParentStart="true" />
-
 
 </RelativeLayout>

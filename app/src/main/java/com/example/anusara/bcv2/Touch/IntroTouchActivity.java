@@ -3,6 +3,7 @@ package com.example.anusara.bcv2.Touch;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -14,13 +15,17 @@ import com.example.anusara.bcv2.R;
 public class IntroTouchActivity extends AppCompatActivity {
 
     Button next;
-    int sum1,sum2,sum3,sum4; //คำตอบ
+    int sum1,sum2,sum3; //คำตอบ
 //    RadioButton myOption1, myOption2, myOption3; //ปลุกกด
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_touch);
+
+        sum1 = getIntent().getIntExtra("sum1", 0);
+        sum2 = getIntent().getIntExtra("sum2", 0);
+        sum3 = getIntent().getIntExtra("sum3", 0);
 
         next = (Button) findViewById(R.id.button3);
         next.setOnClickListener(new View.OnClickListener() {
@@ -30,13 +35,13 @@ public class IntroTouchActivity extends AppCompatActivity {
                     intent.putExtra("sum1", sum1);
                     intent.putExtra("sum2", sum2);
                     intent.putExtra("sum3", sum3);
-                    intent.putExtra("sum4", sum4);
                     startActivity(intent);
 
                 }
 
             }
         });
+        Log.e( "onPostExecute: ", "sum1"+ "sum2"+ "sum3");
     }
 //    public void Condition(){
 //        if(myOption1.isChecked()){

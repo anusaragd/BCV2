@@ -39,6 +39,10 @@ public class TouchActivity extends AppCompatActivity {
         GestureOverlayView gestures = (GestureOverlayView) findViewById(R.id.gestures);
         gestures.addOnGesturePerformedListener(handleGestureListener);
 
+        sum1 = getIntent().getIntExtra("sum1", 0);
+        sum2 = getIntent().getIntExtra("sum2", 0);
+        sum3 = getIntent().getIntExtra("sum3", 0);
+
 
         next = (Button) findViewById(R.id.button6);
         next.setOnClickListener(new View.OnClickListener() {

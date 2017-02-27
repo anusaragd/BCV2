@@ -16,7 +16,7 @@ public class GT5Activity extends AppCompatActivity {
 
     RadioButton myOption1, myOption2, myOption3; //ปลุกกด
     Button btn1;
-    String ans; //เก็บผลลัพธ์
+    String user; //เก็บผลลัพธ์
     int sum1,sum2,sum3,sum4,sum5; //คำตอบ
 
     @Override
