@@ -12,8 +12,8 @@ import okhttp3.RequestBody;
  */
 public class JSONObtained {
 //    public static final String BASE_URL = "http://192.168.1.35/breast-cancer/";
-//    public static final String BASE_URL = "http://192.168.1.33/breast-cancer/";
-    public static final String BASE_URL = "http://10.10.11.105/breast-cancer/";
+    public static final String BASE_URL = "http://192.168.1.33/breast-cancer/";
+//    public static final String BASE_URL = "http://10.10.11.105/breast-cancer/";
 //    public static final String BASE_URL = "http://103.253.73.77/anusara/Breast-Cancer/";
 //    public static final String BASE_URL = "http://103.253.73.77/Breast-Cancer/";
 //    public static final String BASE_URL = "http://103.253.73.77/anusara/";

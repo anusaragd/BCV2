@@ -1,90 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-package="com.example.anusara.bcv2">
+    package="com.example.anusara.bcv2">
 
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-<uses-permission android:name="android.permission.WAKE_LOCK" />
-<uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-<!-- <uses-permission android:name="android.permission.VIBRATE" /> -->
-<application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name"
-    android:supportsRtl="true" android:theme="@style/AppTheme"
-    android:largeHeap="true"
-    android:name="android.support.multidex.MultiDexApplication">
+    <!-- <uses-permission android:name="android.permission.VIBRATE" /> -->
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCf8BBUneTI-_EmLYyI1ypwfCfhN8Sgiu8" />
 
-    <meta-data android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyCf8BBUneTI-_EmLYyI1ypwfCfhN8Sgiu8" />
+        <activity
+            android:name=".GPS.MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".intro"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-    <activity android:name="com.example.anusara.bcv2.GPS.MapsActivity" android:label="@string/title_activity_maps"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Member.MembermainActivity"
+            android:label="@string/title_activity_membermain"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Guest.GuestMainActivity"
+            android:label="@string/title_activity_guest_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".About.AboutActivity" />
+        <activity android:name=".About.ShowAboutActivity" />
+        <activity android:name=".Member.Questionnaire.MQuestionActivity" />
+        <activity android:name=".Member.Questionnaire.AnsQuestionActivity" />
+        <activity android:name=".Member.MTest.MTestActivity" />
+        <activity android:name=".Member.MTest.MT1Activity" />
+        <activity android:name=".Member.MTest.MT2Activity" />
+        <activity android:name=".Member.MTest.MT3Activity" />
+        <activity android:name=".Member.MTest.MT4Activity" />
+        <activity android:name=".Member.MTest.MT5Activity" />
+        <activity android:name=".Member.MTest.MT6Activity" />
+        <activity android:name=".Member.MTest.MTSumActivity" />
+        <activity
+            android:name=".Member.MPost.MPostActivity"
+            android:label="@string/title_activity_mpost"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Member.MPost.MPostaddActivity" />
+        <activity android:name=".Member.MPost.MPostShowActivity" />
+        <activity android:name=".Member.MComment.CommentActivity" />
+        <activity android:name=".Touch.TouchActivity" />
+        <activity android:name=".Alarm.SetAlarmActivity" />
+        <activity android:name=".Guest.GQuestion.GQuestionActivity" />
+        <activity android:name=".Guest.GQuestion.GAnsQuesActivity" />
+        <activity android:name=".Guest.GPosts.GPostActivity" />
+        <activity android:name=".Guest.GPosts.GPostShowActivity" />
+        <activity android:name=".Touch.IntroTouchActivity" />
+        <activity android:name=".Touch.finishTouchActivity" />
+        <activity android:name=".GPS.GPSActivity" />
+        <!-- <activity android:name=".Alarm.BroadcastManager"></activity> -->
 
 
+        <!-- <receiver -->
+        <!-- android:name=".Alarm.BroadcastManager" -->
+        <!-- android:label="BroadcastReceiverAux"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="ALARM" /> -->
 
 
-    <activity android:name=".intro" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-    <activity android:name=".MainActivity" />
-    <activity android:name=".Member.MembermainActivity" android:label="@string/title_activity_membermain"
-        android:theme="@style/AppTheme.NoActionBar" />
-    <activity android:name=".Guest.GuestMainActivity" android:label="@string/title_activity_guest_main"
-        android:theme="@style/AppTheme.NoActionBar" />
-    <activity android:name=".RegisterActivity" />
-    <activity android:name=".About.AboutActivity" />
-    <activity android:name=".About.ShowAboutActivity" />
-    <activity android:name=".Member.Questionnaire.MQuestionActivity" />
-    <activity android:name=".Member.Questionnaire.AnsQuestionActivity" />
-    <activity android:name=".Member.MTest.MTestActivity" />
-    <activity android:name=".Member.MTest.MT1Activity" />
-    <activity android:name=".Member.MTest.MT2Activity" />
-    <activity android:name=".Member.MTest.MT3Activity" />
-    <activity android:name=".Member.MTest.MT4Activity" />
-    <activity android:name=".Member.MTest.MT5Activity" />
-    <activity android:name=".Member.MTest.MT6Activity" />
-    <activity android:name=".Member.MTest.MTSumActivity" />
-    <activity android:name=".Member.MPost.MPostActivity" android:label="@string/title_activity_mpost"
-        android:theme="@style/AppTheme.NoActionBar" />
-    <activity android:name=".Member.MPost.MPostaddActivity" />
-    <activity android:name=".Member.MPost.MPostShowActivity" />
-    <activity android:name=".Member.MComment.CommentActivity" />
-    <activity android:name=".Touch.TouchActivity" />
-    <activity android:name=".Alarm.SetAlarmActivity" />
-    <activity android:name=".Guest.GQuestion.GQuestionActivity" />
-    <activity android:name=".Guest.GQuestion.GAnsQuesActivity" />
-    <activity android:name=".Guest.GPosts.GPostActivity" />
-    <activity android:name=".Guest.GPosts.GPostShowActivity" />
-    <activity android:name=".Touch.IntroTouchActivity" />
-    <activity android:name=".Touch.finishTouchActivity" />
-    <activity android:name=".GPS.GPSActivity" />
-    <!--<activity android:name=".Alarm.BroadcastManager"></activity>-->
+        <receiver android:name=".Alarm.AutoStart">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
-    <!--<receiver-->
-    <!--android:name=".Alarm.BroadcastManager"-->
-    <!--android:label="BroadcastReceiverAux">-->
-    <!--<intent-filter>-->
-    <!--<action android:name="ALARM" />-->
+        <service
+            android:name=".Alarm.YourService"
+            android:enabled="true"
+            android:process=":your_service" />
 
-    <!--<category android:name="android.intent.category.DEFAULT" />-->
-    <!--</intent-filter>-->
-    <!--</receiver>-->
+        <receiver android:name=".Alarm.Alarm" />
 
-    <receiver android:name=".Alarm.AutoStart">
-        <intent-filter>
-            <action android:name="android.intent.action.BOOT_COMPLETED"></action>
-        </intent-filter>
-    </receiver>
-
-    <service android:name=".Alarm.YourService" android:enabled="true" android:process=":your_service"></service>
-    <receiver android:name=".Alarm.Alarm"></receiver>
-
-</application>
+        <activity android:name=".Guest.GTest.GT1Activity" />
+        <activity android:name=".Guest.GTest.GT2Activity" />
+        <activity android:name=".Guest.GTest.GT3Activity" />
+        <activity android:name=".Guest.GTest.GT4Activity" />
+        <activity android:name=".Guest.GTest.GT5Activity" />
+        <activity android:name=".Guest.GTest.GT6Activity" />
+        <activity android:name=".Guest.GTest.GTSumActivity" />
+        <activity android:name=".Guest.GTest.GTestActivity"></activity>
+    </application>
 
 </manifest>
-
-
-

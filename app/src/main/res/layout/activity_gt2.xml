@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_gt2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.anusara.bcv2.Guest.GTest.GT2Activity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/ttr2"
+        android:id="@+id/imageView2" />
+
+    <TextView
+        android:text="2. ยกแขนเหนือศรีษะทั้ง 2 ข้างหมุนตัวช้าๆ เพื่อดูความผิดปกติบริเวณด้านข้างของเต้านม"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView25"
+        android:textSize="16sp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentStart="true" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView25"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="19dp">
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ปกติรูปอกไม่บิดเบี้ยวจนเสียรูป"
+            android:id="@+id/radioButton"
+            android:layout_above="@+id/radioButton2"
+            android:layout_alignStart="@+id/radioButton2" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ผิดปกติรูปอกมีความบิดเบี้ยวเสียรูปทรง"
+            android:id="@+id/radioButton2"
+            android:layout_above="@+id/radioButton3"
+            android:layout_alignStart="@+id/radioButton3" />
+
+        <RadioButton
+            android:layout_width="271dp"
+            android:layout_height="wrap_content"
+            android:text="ไม่แน่ใจพึ่งเคยสังเกต"
+            android:id="@+id/radioButton3"
+            android:layout_above="@+id/nextbutton"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1" />
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="ถัดไป"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:background="#FF5252"
+        android:id="@+id/nextbutton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/radioGroup2" />
+
+
+</RelativeLayout>

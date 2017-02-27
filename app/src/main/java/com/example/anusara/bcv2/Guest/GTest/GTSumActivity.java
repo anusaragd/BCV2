@@ -1,4 +1,4 @@
-package com.example.anusara.bcv2.Member.MTest;
+package com.example.anusara.bcv2.Guest.GTest;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.anusara.bcv2.Guest.GuestMainActivity;
+import com.example.anusara.bcv2.Member.MTest.MTSumActivity;
+import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.Member.MembermainActivity;
 import com.example.anusara.bcv2.R;
 
@@ -19,7 +22,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class MTSumActivity extends AppCompatActivity {
+public class GTSumActivity extends AppCompatActivity {
 
     TextView textShow, txtResult;
     int sum1,sum2,sum3,sum4,sum5,sum6; //คำตอบ
@@ -30,7 +33,7 @@ public class MTSumActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mtsum);
+        setContentView(R.layout.activity_gtsum);
 
         sum1 = getIntent().getIntExtra("sum1", 0);
         sum2 = getIntent().getIntExtra("sum2", 0);
@@ -48,7 +51,7 @@ public class MTSumActivity extends AppCompatActivity {
         savebut.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (v.getId() == R.id.savebutton) {
-                    Intent intent = new Intent(getApplicationContext(), MembermainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), GuestMainActivity.class);
                     startActivity(intent);
 
                 }
@@ -59,7 +62,7 @@ public class MTSumActivity extends AppCompatActivity {
         agianbut.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (v.getId() == R.id.agianbutton) {
-                    Intent intent = new Intent(getApplicationContext(), MTestActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), GTestActivity.class);
                     intent.putExtra("sum1", sum1);
                     startActivity(intent);
 
@@ -69,15 +72,15 @@ public class MTSumActivity extends AppCompatActivity {
         });
 
 
-        getHttp http = new getHttp();
+        GTSumActivity.getHttp http = new GTSumActivity.getHttp();
         String response = null;
         try {
 //            response = http.run("http://192.168.1.2/breast-cancer/getString.php");
 //            response = http.run("http://192.168.43.180/breast-cancer/getString.php");
 //            response = http.run("http://192.168.1.5/breast-cancer/getString.php");
 //            response = http.run("http://192.168.1.37/breast-cancer/getString.php");
-            response = http.run("http://192.168.1.33/breast-cancer/getString.php");
-//            response = http.run("http://10.10.11.105/breast-cancer/getString.php");
+//            response = http.run("http://192.168.1.33/breast-cancer/getString.php");
+            response = http.run("http://10.10.11.105/breast-cancer/getString.php");
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
