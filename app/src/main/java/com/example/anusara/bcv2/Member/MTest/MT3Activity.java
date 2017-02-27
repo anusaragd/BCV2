@@ -40,14 +40,14 @@ public class MT3Activity extends AppCompatActivity {
                 Condition(); // กำหนดค่าของปุ่ม
                 if (v.getId() == R.id.nextbutton) {
                     if(sum3 != -1){
-                    Intent intent = new Intent(getApplicationContext(), MT4Activity.class);
+                    Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
 //                    Intent intent = new Intent(getApplicationContext(), MT4Activity.class);
                     intent.putExtra("sum1", sum1);
                     intent.putExtra("sum2", sum2);
                     intent.putExtra("sum3", sum3);
                     startActivity(intent);
                     }
-                    else {
+                    if(sum3 == -1) {
                         Intent intent = new Intent(getApplicationContext(), MT3Activity.class);
                         intent.putExtra("sum1", sum1);
                         intent.putExtra("sum2", sum2);

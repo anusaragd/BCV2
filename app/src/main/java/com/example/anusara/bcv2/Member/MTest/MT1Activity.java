@@ -40,7 +40,7 @@ public class MT1Activity extends AppCompatActivity {
                         intent.putExtra("sum1", sum1);
                         startActivity(intent);
                     }
-                    else {
+                    if(sum1 == -1) {
                         Intent intent = new Intent(getApplicationContext(), MT1Activity.class);
                         startActivity(intent);
                     }

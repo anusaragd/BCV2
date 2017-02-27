@@ -29,7 +29,7 @@ public class finishTouchActivity extends AppCompatActivity {
                     intent.putExtra("sum1", sum1);
                     intent.putExtra("sum2", sum2);
                     intent.putExtra("sum3", sum3);
-                    intent.putExtra("sum4", sum4);
+//                    intent.putExtra("sum4", sum4);
                     startActivity(intent);
 
                 }

@@ -72,8 +72,8 @@ public class AboutActivity extends AppCompatActivity {
 //                    response = http.run("http://192.168.1.2/breast-cancer/postnews.php");
 //                    response = http.run("http://10.10.11.105/breast-cancer/postnews.php");
 //                    response = http.run("http://192.168.1.37/breast-cancer/postnews.php");
-//                    response = http.run("http://192.168.1.33/breast-cancer/postnews.php");
-                    response = http.run("http://103.253.73.77/anusara/breast-cancer/postnews.php");
+                    response = http.run("http://192.168.1.33/breast-cancer/postnews.php");
+//                    response = http.run("http://103.253.73.77/anusara/breast-cancer/postnews.php");
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

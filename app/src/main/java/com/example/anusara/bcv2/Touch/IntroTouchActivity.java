@@ -22,10 +22,6 @@ public class IntroTouchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_touch);
 
-//        myOption1 = (RadioButton) findViewById(R.id.radioButton);
-//        myOption2 = (RadioButton) findViewById(R.id.radioButton2);
-//        myOption3 = (RadioButton) findViewById(R.id.radioButton3);
-
         next = (Button) findViewById(R.id.button3);
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
