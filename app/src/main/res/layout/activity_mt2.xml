@@ -12,7 +12,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="350dp"
         android:src="@drawable/ttr2"
         android:id="@+id/imageView2" />
 
@@ -21,24 +21,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView25"
-        android:textSize="16sp"
-        android:layout_below="@+id/imageView2"
+        android:textSize="20sp"
+        android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="160dp"
         android:layout_below="@+id/textView25"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="19dp">
+        android:layout_alignParentEnd="true">
 
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ปกติรูปอกไม่บิดเบี้ยวจนเสียรูป"
+            android:text="รูปอกไม่บิดเบี้ยวจนเสียรูป"
             android:id="@+id/radioButton"
             android:layout_above="@+id/radioButton2"
             android:layout_alignStart="@+id/radioButton2" />
@@ -46,19 +46,10 @@
         <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ผิดปกติรูปอกมีความบิดเบี้ยวเสียรูปทรง"
+        android:text="รูปอกมีความบิดเบี้ยวเสียรูปทรง"
         android:id="@+id/radioButton2"
         android:layout_above="@+id/radioButton3"
         android:layout_alignStart="@+id/radioButton3" />
-
-        <RadioButton
-        android:layout_width="271dp"
-        android:layout_height="wrap_content"
-        android:text="ไม่แน่ใจพึ่งเคยสังเกต"
-        android:id="@+id/radioButton3"
-            android:layout_above="@+id/nextbutton"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1" />
 
     </RadioGroup>
 
@@ -70,8 +61,10 @@
         android:textColor="#FFFFFF"
         android:background="#FF5252"
         android:id="@+id/nextbutton"
+        android:layout_marginBottom="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/radioGroup2" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="141dp" />
 
 
 </RelativeLayout>

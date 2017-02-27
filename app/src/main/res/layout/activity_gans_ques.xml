@@ -11,25 +11,6 @@
     tools:context="com.example.anusara.bcv2.Guest.GQuestion.GAnsQuesActivity">
 
     <TextView
-        android:text="ที่มา โครงการรักษ์เต้านม คณะพยาบาลศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:id="@+id/textView31"
-        android:layout_below="@+id/button4"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:textColor="#FF5252"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="ผลลัพธ์ของคุณคือ"
-        android:textSize="20dp"/>
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="........."
@@ -40,26 +21,47 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="65dp" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Summit"
-        android:background="#FF5252"
-        android:id="@+id/button4"
-        android:textColor="#FFFFFF"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/textView2"
+        android:textColor="#FF5252"
+        android:text="ผลลัพธ์ของคุณคือ"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+
+    <TextView
+        android:text="ที่มา โครงการรักษ์เต้านม คณะพยาบาลศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView31"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="36dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agian"
+        android:text="ตกลง"
+        android:background="#FF5252"
+        android:id="@+id/button4"
+        android:textColor="#FFFFFF"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="51dp"
+        android:layout_above="@+id/textView31"
+        android:layout_toStartOf="@+id/textView2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ลองใหม่"
         android:background="#FF5252"
         android:textColor="#FFFFFF"
         android:id="@+id/button5"
-        android:layout_alignTop="@+id/button4"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_toEndOf="@+id/textView2" />
 
 </RelativeLayout>

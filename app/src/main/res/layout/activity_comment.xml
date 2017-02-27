@@ -15,30 +15,29 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/comment"
-        android:layout_marginTop="28dp"
-        android:layout_alignParentLeft="true"
+        android:layout_marginTop="67dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:layout_marginRight="40dp"
-        android:text="submit"
+        android:text="ตกลง"
         android:id="@+id/button8"
-        android:layout_marginBottom="282dp"
-        android:layout_marginStart="61dp"
+        android:textSize="20sp"
+        android:layout_marginStart="13dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:text="cancle"
+        android:text="ยกเลิก"
         android:id="@+id/canbelb"
-        android:layout_marginEnd="58dp"
-        android:layout_alignBottom="@+id/button8"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/button8" />
+        android:textSize="20sp"
+        android:layout_marginEnd="29dp"
+        android:layout_alignTop="@+id/button8"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

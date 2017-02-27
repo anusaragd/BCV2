@@ -20,6 +20,7 @@ import com.example.anusara.bcv2.GPS.GPSActivity;
 import com.example.anusara.bcv2.GPS.MapsActivity;
 import com.example.anusara.bcv2.Guest.GPosts.GPostActivity;
 import com.example.anusara.bcv2.Guest.GQuestion.GQuestionActivity;
+import com.example.anusara.bcv2.Guest.GTest.GTestActivity;
 import com.example.anusara.bcv2.HelpActivity;
 import com.example.anusara.bcv2.MainActivity;
 import com.example.anusara.bcv2.Member.MTest.MTestActivity;
@@ -104,7 +105,7 @@ public class GuestMainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.test) {
-            Intent intent = new Intent(getApplicationContext(), MTestActivity.class);
+            Intent intent = new Intent(getApplicationContext(), GTestActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.alarm) {

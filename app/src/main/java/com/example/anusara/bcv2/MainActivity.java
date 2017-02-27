@@ -130,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void LoginData() {
         HttpUrl httpUrl = HttpUrl.parse(JSONObtained.BASE_URL + "checklogin.php");
+//        HttpUrl httpUrl = HttpUrl.parse("103.253.73.77/anusara/Breast-Cancer/checklogin.php");
         RequestBody formBody = new FormBody.Builder()
                 .add("username", username.getText().toString())
                 .add("password", password.getText().toString())

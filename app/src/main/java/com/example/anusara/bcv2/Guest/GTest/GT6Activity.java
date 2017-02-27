@@ -46,7 +46,7 @@ public class GT6Activity extends AppCompatActivity {
                         intent.putExtra("sum1", sum1);
                         intent.putExtra("sum2", sum2);
                         intent.putExtra("sum3", sum3);
-//                        intent.putExtra("sum4", sum4);
+                        intent.putExtra("sum4", sum4);
                         intent.putExtra("sum5", sum5);
                         intent.putExtra("sum6", sum6);
                         startActivity(intent);
@@ -56,7 +56,7 @@ public class GT6Activity extends AppCompatActivity {
                         intent.putExtra("sum1", sum1);
                         intent.putExtra("sum2", sum2);
                         intent.putExtra("sum3", sum3);
-//                        intent.putExtra("sum4", sum4);
+                        intent.putExtra("sum4", sum4);
                         intent.putExtra("sum5", sum5);
                         startActivity(intent);
 

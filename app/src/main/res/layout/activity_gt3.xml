@@ -13,7 +13,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="350dp"
         android:src="@drawable/ttr3"
         android:id="@+id/imageView2" />
 
@@ -28,51 +28,45 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/nextbutton"
-        android:layout_alignEnd="@+id/nextbutton">
-
-
-
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ปกติรูปอกไม่บิดเบี้ยวจนเสียรูป"
-            android:id="@+id/radioButton"
-            android:layout_above="@+id/radioButton2"
-            android:layout_alignStart="@+id/radioButton2" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ผิดปกติรูปอกมีความบิดเบี้ยวเสียรูปทรง"
-            android:id="@+id/radioButton2"
-            android:layout_above="@+id/radioButton3"
-            android:layout_alignParentStart="true" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ไม่แน่ใจ"
-            android:id="@+id/radioButton3"
-            android:layout_marginBottom="22dp"
-            android:layout_above="@+id/nextbutton"
-            android:layout_alignParentStart="true" />
-
-    </RadioGroup>
-
     <TextView
         android:text="3. ใช้มือเท้าเอวแล้วโน้มตัวมาข้างหน้าเล็กน้อยดูความเปลี่ยนแปลงซ้ำอีกครั้ง"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView26"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        android:layout_marginTop="53dp"
         android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView26"
+        android:layout_alignStart="@+id/nextbutton"
+        android:layout_marginTop="71dp">
+
+
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="รูปอกไม่บิดเบี้ยวจนเสียรูป"
+            android:id="@+id/radioButton"
+            android:layout_above="@+id/radioButton2"
+            android:layout_alignStart="@+id/radioButton2"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="รูปอกมีความบิดเบี้ยวเสียรูปทรง"
+            android:id="@+id/radioButton2"
+            android:layout_above="@+id/radioButton3"
+            android:layout_alignParentStart="true"
+            android:textSize="16sp" />
+
+    </RadioGroup>
 
 </RelativeLayout>

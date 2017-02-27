@@ -22,6 +22,7 @@ public class GT5Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_gt5);
         sum1 = getIntent().getIntExtra("sum1", 0);
         sum2 = getIntent().getIntExtra("sum2", 0);
@@ -30,7 +31,7 @@ public class GT5Activity extends AppCompatActivity {
 
         myOption1 = (RadioButton) findViewById(R.id.radioButton);
         myOption2 = (RadioButton) findViewById(R.id.radioButton2);
-        myOption3 = (RadioButton) findViewById(R.id.radioButton3);
+//        myOption3 = (RadioButton) findViewById(R.id.radioButton3);
 
 //        Condition(); // กำหนดค่าของปุ่ม
 
@@ -70,9 +71,7 @@ public class GT5Activity extends AppCompatActivity {
         if(myOption2.isChecked()){
             sum5 = 2;
         }
-        if(myOption3.isChecked()){
-            sum5 = 1;
-        }
+
         if(sum5 == -1){
             Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
         }

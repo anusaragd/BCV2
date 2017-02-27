@@ -25,7 +25,7 @@ public class MT1Activity extends AppCompatActivity {
 
         myOption1 = (RadioButton) findViewById(R.id.radio1);
         myOption2 = (RadioButton) findViewById(R.id.radio2);
-        myOption3 = (RadioButton) findViewById(R.id.radio3);
+//        myOption3 = (RadioButton) findViewById(R.id.radio3);
 
 //        Condition(); // กำหนดค่าของปุ่ม
 
@@ -58,9 +58,7 @@ public class MT1Activity extends AppCompatActivity {
         if(myOption2.isChecked()){
             sum1 = 2;
         }
-        if(myOption3.isChecked()){
-            sum1 = 1;
-        }
+
         if(sum1 == -1){
             Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
         }

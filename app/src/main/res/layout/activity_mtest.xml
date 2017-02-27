@@ -16,7 +16,7 @@
         android:orientation="vertical"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:text="เริ่มตรวจกันเถอะ..."
+        android:text="เริ่มตรวจกัน"
         android:textSize="20dp"
         android:textColor="#FFFFFF"
         android:background="#FF5252"

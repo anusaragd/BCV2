@@ -14,30 +14,9 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="350dp"
         android:src="@drawable/ttr6"
         android:id="@+id/imageView2" />
-
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="ถัดไป"
-        android:textSize="20dp"
-        android:textColor="#FFFFFF"
-        android:background="#FF5252"
-        android:id="@+id/nextbutton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="6. ใช้นิ้วมือบีบที่หัวนมเบาๆ ดูว่ามีเลือด หนอง หรือน้ำไหลออกจากหัวนมหรือไม่"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView27"
-        android:textSize="16sp"
-        android:layout_below="@+id/imageView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
 
     <RadioGroup
         android:id="@+id/radioGroup4"
@@ -60,7 +39,8 @@
             android:id="@+id/radioButton"
             android:layout_marginTop="13dp"
             android:layout_below="@+id/textView27"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textSize="16sp" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -68,10 +48,31 @@
             android:text="ไม่มี"
             android:id="@+id/radioButton2"
             android:layout_below="@+id/radioButton"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textSize="16sp" />
 
     </RadioGroup>
 
+    <TextView
+        android:text="6. ใช้นิ้วมือบีบที่หัวนมเบาๆ ดูว่ามีเลือด หนอง หรือน้ำไหลออกจากหัวนมหรือไม่"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView27"
+        android:textSize="20sp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="ถัดไป"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:background="#FF5252"
+        android:id="@+id/nextbutton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp" />
 
 
 </RelativeLayout>

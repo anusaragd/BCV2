@@ -30,7 +30,7 @@ public class MT6Activity extends AppCompatActivity {
 
         myOption1 = (RadioButton) findViewById(R.id.radioButton);
         myOption2 = (RadioButton) findViewById(R.id.radioButton2);
-        myOption3 = (RadioButton) findViewById(R.id.radioButton3);
+//        myOption3 = (RadioButton) findViewById(R.id.radioButton3);
 
 //        Condition(); // กำหนดค่าของปุ่ม
 
@@ -68,14 +68,12 @@ public class MT6Activity extends AppCompatActivity {
     }
     public void Condition(){
         if(myOption1.isChecked()){
-            sum6 = 0;
-        }
-        if(myOption2.isChecked()){
             sum6 = 2;
         }
-        if(myOption3.isChecked()){
-            sum6 = 1;
+        if(myOption2.isChecked()){
+            sum6 = 0;
         }
+
         if(sum6 == -1){
             Toast.makeText(getApplicationContext(), "Please select Gender", Toast.LENGTH_SHORT).show();
         }

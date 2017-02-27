@@ -15,9 +15,49 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="350dp"
         android:src="@drawable/ttr5"
         android:id="@+id/imageView2" />
+
+    <TextView
+        android:text="5. เปลี่ยนเป็นคลำในท่านอนใช้หมอนหนุนไหล่ข้างที่จะทำ แล้วคลำซ้ำเหมือนท่ายืน"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView29"
+        android:textSize="20sp"
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp">
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ไม่พบก้อนอะไรแข็งๆ"
+            android:id="@+id/radioButton"
+            android:layout_above="@+id/radioButton2"
+            android:layout_alignStart="@+id/radioButton2"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="คลำเจอก้อนแข็งๆ"
+            android:id="@+id/radioButton2"
+            android:layout_above="@+id/radioButton3"
+            android:textSize="16sp" />
+
+
+    </RadioGroup>
+
     <Button
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -27,51 +67,7 @@
         android:background="#FF5252"
         android:id="@+id/nextbutton"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="5. เปลี่ยนเป็นคลำในท่านอนใช้หมอนหนุนไหล่ข้างที่จะทำ แล้วคลำซ้ำเหมือนท่ายืน"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView29"
-        android:textSize="16sp"
-        android:layout_below="@+id/imageView2"
-        android:layout_alignParentStart="true" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="19dp">
-
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ไม่พบก้อนอะไรแข็งๆ"
-            android:id="@+id/radioButton"
-            android:layout_above="@+id/radioButton2"
-            android:layout_alignStart="@+id/radioButton2" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="คลำเจอก้อนแข็งๆ"
-            android:id="@+id/radioButton2"
-            android:layout_above="@+id/radioButton3" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ไม่แน่ใจ"
-            android:id="@+id/radioButton3"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="48dp" />
-
-
-    </RadioGroup>
+        android:layout_marginBottom="28dp" />
 
 </RelativeLayout>
