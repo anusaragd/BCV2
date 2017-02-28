@@ -41,8 +41,8 @@ public class MT4Activity extends AppCompatActivity {
                 if (v.getId() == R.id.nextbutton) {
                     if(sum4 != -1) {
 //                        Intent intent = new Intent(getApplicationContext(), IntroTouchActivity.class);
-//                        Intent intent = new Intent(getApplicationContext(), MT5Activity.class);
-                        Intent intent = new Intent(getApplicationContext(), MTSumActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), MT5Activity.class);
+//                        Intent intent = new Intent(getApplicationContext(), MTSumActivity.class);
                         intent.putExtra("sum1", sum1);
                         intent.putExtra("sum2", sum2);
                         intent.putExtra("sum3", sum3);

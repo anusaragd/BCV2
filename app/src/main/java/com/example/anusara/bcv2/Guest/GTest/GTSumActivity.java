@@ -109,18 +109,27 @@ public class GTSumActivity extends AppCompatActivity {
         int a = (sum1 + sum2 + sum3 + sum4 + sum5 + sum6);
         String ANS = new String();
 
-        if ((a == 0) || (a == 1) || (a == 2) || (a == 3) || (a == 4)) {
+        if (a == 0) {
             ANS = "เป็นปกติ";
             para = "000001";
         }
-        if ((a == 5) || (a == 6) || (a == 7) || (a == 8)) {
-            ANS = "เสี่ยงต่อการเป็นมะเร็งเต้านม";
-            para = "000002";
-        }
-        if ((a == 9) || (a == 10) || (a == 11) || (a == 12)) {
+
+        if (a >0) {
             ANS = "ตรวจพบว่าคุณเป็นมะเร็งเต้านม";
             para = "000003";
         }
+//          if ((a == 0) || (a == 1) || (a == 2) || (a == 3) || (a == 4)) {
+//            ANS = "เป็นปกติ";
+//            para = "000001";
+//        }
+//        if ((a == 5) || (a == 6) || (a == 7) || (a == 8)) {
+//            ANS = "เสี่ยงต่อการเป็นมะเร็งเต้านม";
+//            para = "000002";
+//        }
+//        if ((a == 9) || (a == 10) || (a == 11) || (a == 12)) {
+//            ANS = "ตรวจพบว่าคุณเป็นมะเร็งเต้านม";
+//            para = "000003";
+//        }
 
         Toast.makeText(getApplicationContext(),a + "",Toast.LENGTH_LONG).show();
         textShow.setText(ANS);

@@ -40,8 +40,8 @@ public class MT6Activity extends AppCompatActivity {
                 Condition(); // กำหนดค่าของปุ่ม
                 if (v.getId() == R.id.nextbutton) {
                     if(sum6 != -1) {
-                        Intent intent = new Intent(getApplicationContext(), MT4Activity.class);
-//                        Intent intent = new Intent(getApplicationContext(), MTSumActivity.class);
+//                        Intent intent = new Intent(getApplicationContext(), MT4Activity.class);
+                        Intent intent = new Intent(getApplicationContext(), MTSumActivity.class);
                         intent.putExtra("sum1", sum1);
                         intent.putExtra("sum2", sum2);
                         intent.putExtra("sum3", sum3);

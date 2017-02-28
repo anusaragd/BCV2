@@ -16,11 +16,11 @@ public class GTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gtest);
 
-        final Button startbutt = (Button) findViewById(R.id.startbutt);
+        final Button startbutt = (Button) findViewById(R.id.button7);
         startbutt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (v.getId() == R.id.startbutt) {
-                    Intent intent = new Intent(getApplicationContext(), MT1Activity.class);
+                if (v.getId() == R.id.button7) {
+                    Intent intent = new Intent(getApplicationContext(), GT1Activity.class);
                     startActivity(intent);
                     //Intent intent = new Intent(getApplicationContext(), homeActivity.class);
                     //startActivity(intent);
@@ -28,5 +28,6 @@ public class GTestActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }

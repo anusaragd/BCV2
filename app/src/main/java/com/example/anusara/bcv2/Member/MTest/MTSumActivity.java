@@ -1,17 +1,26 @@
 package com.example.anusara.bcv2.Member.MTest;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.anusara.bcv2.DataManager.DataAccountManager;
+import com.example.anusara.bcv2.Member.MPost.MPostaddActivity;
 import com.example.anusara.bcv2.Member.MembermainActivity;
 import com.example.anusara.bcv2.R;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
@@ -24,13 +33,25 @@ public class MTSumActivity extends AppCompatActivity {
     TextView textShow, txtResult;
     int sum1,sum2,sum3,sum4,sum5,sum6; //คำตอบ
     Button savebut, agianbut;
-    String para;
+    String para , user;
 
+    private Calendar cal;
+    private int day;
+    private int month;
+    private int year;
+    private EditText et;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mtsum);
+
+        user = DataAccountManager.getInstance().getUsername();
+
+        cal = Calendar.getInstance();
+        day = cal.get(Calendar.DAY_OF_MONTH);
+        month = cal.get(Calendar.MONTH);
+        year = cal.get(Calendar.YEAR);
 
         sum1 = getIntent().getIntExtra("sum1", 0);
         sum2 = getIntent().getIntExtra("sum2", 0);
@@ -50,6 +71,47 @@ public class MTSumActivity extends AppCompatActivity {
                 if (v.getId() == R.id.savebutton) {
                     Intent intent = new Intent(getApplicationContext(), MembermainActivity.class);
                     startActivity(intent);
+                    new AsyncTask<Void, Void, String>() {
+                        @Override
+                        protected String doInBackground(Void... voids) {
+                            MTSumActivity.getHttp http = new MTSumActivity.getHttp();
+                            String response = null;
+                            try {
+//                            response = http.run("http://192.168.43.180/breast-cancer/insert2.php");
+//                            response = http.run("http://192.168.1.2/breast-cancer/insert2.php");
+//                            response = http.run("http://192.168.1.37/breast-cancer/insert2.php");
+                            response = http.run("http://10.10.11.105/breast-cancer/insert2.php");
+//                            response = http.run("http://192.168.1.33/breast-cancer/inserttotal.php");
+//                            response = http.run("http://192.168.1.5/breast-cancer/insert2.php");
+//                            response = http.run("http://192.168.1.43/breast-cancer/insert2.php");
+//                            response = http.run("http://172.19.237.81/breast-cancer/insert2.php");
+                            } catch (IOException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                            Log.e( "GGGGGGGGGGGGG: ", response);
+                            return response;
+                        }
+
+                        @Override
+                        protected void onPostExecute(String string) {
+                            super.onPostExecute(string);
+
+                            Log.e( "onPostExecute: ", string);
+                        }
+                    }.execute();
+
+//                    gethttp();
+
+//                    OkHttpClient client = new OkHttpClient();
+//
+//                    RequestBody requestBody = new MultipartBody.Builder()
+//                            .setType(MultipartBody.FORM)
+//                            .addFormDataPart("username", user)
+//                            .addFormDataPart("r_id", txtResult.getText().toString())
+//                            .addFormDataPart("dateup",cal.getTime().toString())
+////                            .addFormDataPart("dateup",cal.getText().toString())
+//                            .build();
 
                 }
 
@@ -91,6 +153,9 @@ public class MTSumActivity extends AppCompatActivity {
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("r_id", para)
+                .addFormDataPart("username", user)
+                .addFormDataPart("r_id", txtResult.getText().toString())
+                .addFormDataPart("dateup",cal.getTime().toString())
                 .build();
 
         String run(String url) throws IOException {
@@ -131,6 +196,23 @@ public class MTSumActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),a + "",Toast.LENGTH_LONG).show();
         textShow.setText(ANS);
     }
+
+    @Override
+    @Deprecated
+    protected Dialog onCreateDialog(int id) {
+        return new DatePickerDialog(this, datePickerListener, year, month, day);
+    }
+
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+            et.setText(selectedDay + " / " + (selectedMonth + 1) + " / "
+                    + selectedYear);
+        }
+    };
+
+
+
 
     @Override
     public void onBackPressed() {

@@ -35,14 +35,14 @@
 
     <item android:title="Communicate">
         <menu>
-            <item
-                android:id="@+id/help"
-                android:icon="@drawable/ic_help"
-                android:title="About us" />
+            <!--<item-->
+                <!--android:id="@+id/help"-->
+                <!--android:icon="@drawable/ic_help"-->
+                <!--android:title="About us" />-->
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="sign in" />
+                android:title="Register" />
 
         </menu>
     </item>
