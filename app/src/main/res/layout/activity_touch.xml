@@ -34,13 +34,17 @@
         <!--/>-->
         <android.gesture.GestureOverlayView
             android:id="@+id/gestures"
-            android:layout_width="match_parent"
-            android:layout_height="495dp"
+            android:layout_width="333dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
             >
 
         </android.gesture.GestureOverlayView>
 
     </FrameLayout>
+
+
 
     <Button
         android:text="ถัดไป"
@@ -51,5 +55,44 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="21dp" />
+
+    <TextView
+        android:text="ถูกต้อง"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button6"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginBottom="86dp"
+        android:id="@+id/textView" />
+
+
+
+    <TextView
+        android:text="ไม่ถูกต้อง"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="40dp"
+        android:id="@+id/textView32" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toEndOf="@+id/textView32"
+        android:layout_marginStart="40dp"
+        android:id="@+id/correct" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView32"
+        android:layout_alignStart="@+id/correct"
+        android:id="@+id/incorrect" />
+
 
 </RelativeLayout>

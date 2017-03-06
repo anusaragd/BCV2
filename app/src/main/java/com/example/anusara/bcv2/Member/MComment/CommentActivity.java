@@ -58,8 +58,8 @@ public class CommentActivity extends AppCompatActivity {
         sub.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(CommentActivity.this, MPostShowActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(CommentActivity.this, MPostShowActivity.class);
+                //startActivity(intent);
 
                 new AsyncTask<Void, Void, String>() {
                     @Override
@@ -70,9 +70,10 @@ public class CommentActivity extends AppCompatActivity {
 //                            response = http.run("http://192.168.43.180/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.2/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.5/breast-cancer/insertcomment.php");
+                            response = http.run("http://192.168.43.180/breast-cancer/insertcomment.php");
 //                            response = http.run("http://192.168.1.33/breast-cancer/insertcomment.php");
 //                            response = http.run("http://192.168.1.37/breast-cancer/insertcomment.php");
-                            response = http.run("http://10.10.11.105/breast-cancer/insertcomment.php");
+//                            response = http.run("http://10.10.11.105/breast-cancer/insertcomment.php");
 //                            response = http.run("http://172.19.237.81/breast-cancer/insert2.php");
                         } catch (IOException e) {
                             // TODO Auto-generated catch block
@@ -84,6 +85,7 @@ public class CommentActivity extends AppCompatActivity {
                     @Override
                     protected void onPostExecute(String string) {
                         super.onPostExecute(string);
+                        finish();
 
                         Log.e( "onPostExecute: ", string);
                     }
@@ -100,9 +102,10 @@ public class CommentActivity extends AppCompatActivity {
         can.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (v.getId() == R.id.canbelb) {
-                    Intent intent = new Intent(getApplicationContext(), MPostShowActivity.class);
+                    /*Intent intent = new Intent(getApplicationContext(), MPostShowActivity.class);
                     intent.putExtra("p_id",id);
-                    startActivity(intent);
+                    startActivity(intent);*/
+                    finish();
 
                 }
 

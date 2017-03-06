@@ -1,5 +1,6 @@
 package com.example.anusara.bcv2.GPS;
 
+import android.location.Location;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.anusara.bcv2.R;
 import com.example.anusara.bcv2.RegisterActivity;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -33,7 +35,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class GPSActivity extends FragmentActivity implements OnMapReadyCallback {
+public class GPSActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mMap;
     ArrayList<HashMap<String, String>> contactList;
@@ -123,6 +125,11 @@ public class GPSActivity extends FragmentActivity implements OnMapReadyCallback 
 
             }
         }.execute();
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+
     }
 
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_ans_question"
     android:layout_width="match_parent"
@@ -64,4 +65,13 @@
         android:layout_alignBaseline="@+id/button5"
         android:layout_alignBottom="@+id/button5"
         android:layout_toStartOf="@+id/textView2" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/cast_abc_scrubber_control_to_pressed_mtrl_000"
+        android:layout_below="@+id/textView15"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="108dp"
+        android:id="@+id/imageView4" />
 </RelativeLayout>

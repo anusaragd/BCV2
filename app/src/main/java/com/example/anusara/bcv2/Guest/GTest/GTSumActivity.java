@@ -1,20 +1,29 @@
 package com.example.anusara.bcv2.Guest.GTest;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.anusara.bcv2.DataManager.DataAccountManager;
 import com.example.anusara.bcv2.Guest.GuestMainActivity;
+import com.example.anusara.bcv2.Member.MPost.MPostaddActivity;
 import com.example.anusara.bcv2.Member.MTest.MTSumActivity;
 import com.example.anusara.bcv2.Member.MTest.MTestActivity;
 import com.example.anusara.bcv2.Member.MembermainActivity;
 import com.example.anusara.bcv2.R;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
@@ -25,9 +34,18 @@ import okhttp3.Response;
 public class GTSumActivity extends AppCompatActivity {
 
     TextView textShow, txtResult;
-    int sum1,sum2,sum3,sum4,sum5,sum6; //คำตอบ
+    int sum1, sum2, sum3, sum4, sum5, sum6; //คำตอบ
     Button savebut, agianbut;
     String para;
+    String user;
+    String username;
+    String date;
+
+    private Calendar cal;
+    private int day;
+    private int month;
+    private int year;
+    private EditText et;
 
 
     @Override
@@ -42,6 +60,16 @@ public class GTSumActivity extends AppCompatActivity {
         sum5 = getIntent().getIntExtra("sum5", 0);
         sum6 = getIntent().getIntExtra("sum6", 0);
 
+        user = DataAccountManager.getInstance().getUsername();
+        username =user;
+        cal = Calendar.getInstance();
+        day = cal.get(Calendar.DAY_OF_MONTH);
+        month = cal.get(Calendar.MONTH);
+        year = cal.get(Calendar.YEAR);
+
+        date = cal.getTime().toString();
+        Log.e( "onCreate: ", date);
+
         textShow = (TextView) findViewById(R.id.textView15);
         Datasum();
 
@@ -51,8 +79,45 @@ public class GTSumActivity extends AppCompatActivity {
         savebut.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (v.getId() == R.id.savebutton) {
+
                     Intent intent = new Intent(getApplicationContext(), GuestMainActivity.class);
                     startActivity(intent);
+                    new AsyncTask<Void, Void, String>() {
+                        @Override
+                        protected String doInBackground(Void... voids) {
+                            getHttp http = new getHttp();
+                            String response = null;
+                            try {
+                                RequestBody requestBody = new MultipartBody.Builder()
+                                        .setType(MultipartBody.FORM)
+                                        //.addFormDataPart("username", username)
+                                        .addFormDataPart("r_id", para)
+                                        .addFormDataPart("p_date", date)
+                                        .build();
+//                            response = http.run("http://192.168.43.180/breast-cancer/insert2.php");
+//                            response = http.run("http://192.168.1.2/breast-cancer/insert2.php");
+//                            response = http.run("http://192.168.1.37/breast-cancer/insert2.php");
+//                            response = http.run("http://10.10.11.105/breast-cancer/insert2.php");
+                                response = http.run("http://192.168.43.180/breast-cancer/inserttotal.php", requestBody);
+//                                response = http.run("http://192.168.1.33/breast-cancer/inserttotal.php", requestBody);
+//                            response = http.run("http://192.168.1.5/breast-cancer/insert2.php");
+//                            response = http.run("http://192.168.1.43/breast-cancer/insert2.php");
+//                            response = http.run("http://172.19.237.81/breast-cancer/insert2.php");
+                            } catch (IOException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                            Log.e("GGGGGGGGGGGGG: ", response);
+                            return response;
+                        }
+
+                        @Override
+                        protected void onPostExecute(String string) {
+                            super.onPostExecute(string);
+
+                            Log.e("onPostExecute: ", string);
+                        }
+                    }.execute();
 
                 }
 
@@ -65,38 +130,53 @@ public class GTSumActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), GTestActivity.class);
                     intent.putExtra("sum1", sum1);
                     startActivity(intent);
-
                 }
-
             }
         });
 
+        new AsyncTask<Void, Void, String>() {
+            @Override
+            protected String doInBackground(Void... voids) {
+                getHttp http = new getHttp();
+                String response = null;
+                try {
+                    RequestBody requestBody = new MultipartBody.Builder()
+                            .setType(MultipartBody.FORM)
+                            .addFormDataPart("r_id", para)
+                            .build();
+                    Log.e("onCreate: ", para);
 
-        GTSumActivity.getHttp http = new GTSumActivity.getHttp();
-        String response = null;
-        try {
 //            response = http.run("http://192.168.1.2/breast-cancer/getString.php");
 //            response = http.run("http://192.168.43.180/breast-cancer/getString.php");
 //            response = http.run("http://192.168.1.5/breast-cancer/getString.php");
 //            response = http.run("http://192.168.1.37/breast-cancer/getString.php");
-//            response = http.run("http://192.168.1.33/breast-cancer/getString.php");
-            response = http.run("http://10.10.11.105/breast-cancer/getString.php");
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        txtResult.setText(response);
+//                    response = http.run("http://192.168.1.33/breast-cancer/getString.php", requestBody);
+                    response = http.run("http://192.168.43.180/breast-cancer/getString.php", requestBody);
+                    Log.e("onCreate: ", response);
+//            response = http.run("http://10.10.11.105/breast-cancer/getString.php");
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                return response;
+            }
+
+            @Override
+            protected void onPostExecute(String string) {
+                super.onPostExecute(string);
+
+                txtResult.setText(string);
+                Log.e("onPostExecute: ", string);
+            }
+        }.execute();
+
 
     }
+
     public class getHttp {
         OkHttpClient client = new OkHttpClient();
 
-        RequestBody requestBody = new MultipartBody.Builder()
-                .setType(MultipartBody.FORM)
-                .addFormDataPart("r_id", para)
-                .build();
-
-        String run(String url) throws IOException {
+        String run(String url, RequestBody requestBody) throws IOException {
             Request request = new Request.Builder()
                     .post(requestBody)
                     .url(url)
@@ -105,6 +185,7 @@ public class GTSumActivity extends AppCompatActivity {
             return response.body().string();
         }
     }
+
     public void Datasum() {
         int a = (sum1 + sum2 + sum3 + sum4 + sum5 + sum6);
         String ANS = new String();
@@ -114,8 +195,8 @@ public class GTSumActivity extends AppCompatActivity {
             para = "000001";
         }
 
-        if (a >0) {
-            ANS = "ตรวจพบว่าคุณเป็นมะเร็งเต้านม";
+        if (a > 0) {
+            ANS = "ตรวจพบว่าคุณอาจเป็นมะเร็งเต้านม";
             para = "000003";
         }
 //          if ((a == 0) || (a == 1) || (a == 2) || (a == 3) || (a == 4)) {
@@ -131,7 +212,7 @@ public class GTSumActivity extends AppCompatActivity {
 //            para = "000003";
 //        }
 
-        Toast.makeText(getApplicationContext(),a + "",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), a + "", Toast.LENGTH_LONG).show();
         textShow.setText(ANS);
     }
 
@@ -142,9 +223,23 @@ public class GTSumActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    @Deprecated
+    protected Dialog onCreateDialog(int id) {
+        return new DatePickerDialog(this, datePickerListener, year, month, day);
+    }
+
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+            et.setText(selectedDay + " / " + (selectedMonth + 1) + " / "
+                    + selectedYear);
+        }
+    };
 
 
-    public int getSum1() {
+
+    /*public int getSum1() {
         return sum1;
     }
 
@@ -190,7 +285,7 @@ public class GTSumActivity extends AppCompatActivity {
 
     public void setSum6(int sum6) {
         this.sum6 = sum6;
-    }
+    }*/
 
 }
 

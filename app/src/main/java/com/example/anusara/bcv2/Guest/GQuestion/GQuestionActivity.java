@@ -35,7 +35,6 @@ public class GQuestionActivity extends AppCompatActivity {
         ll.setOrientation(LinearLayout.VERTICAL);
         sv.addView(ll);
 
-
         myOption1 = (RadioButton) findViewById(R.id.radio1);
         myOption2 = (RadioButton) findViewById(R.id.radio2);
         myOption3 = (RadioButton) findViewById(R.id.radio3);
@@ -59,10 +58,6 @@ public class GQuestionActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
 
         btn1 = (Button) findViewById(R.id.resultbutton);
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -99,8 +94,27 @@ public class GQuestionActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        sum1 = -1;
+        sum2 = -1;
+        sum3 = -1;
+        sum4 = -1;
+        sum5 = -1;
+        sum6 = -1;
+
         if (requestCode == 0) {
-           finish();
+
+            myOption1.setChecked(false);
+            myOption2.setChecked(false);
+            myOption3.setChecked(false);
+            myOption4.setChecked(false);
+            myOption5.setChecked(false);
+            myOption6.setChecked(false);
+            myOption7.setChecked(false);
+            myOption8.setChecked(false);
+            myOption9.setChecked(false);
+            myOption10.setChecked(false);
+            myOption11.setChecked(false);
+            myOption12.setChecked(false);
         }
     }//onActivityResult
 

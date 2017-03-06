@@ -45,7 +45,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="ตกลง"
         android:background="#FF5252"
         android:id="@+id/savebutton"
         android:textColor="#FFFFFF"
@@ -56,7 +56,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agian"
+        android:text="อีกครั้ง"
         android:background="#FF5252"
         android:textColor="#FFFFFF"
         android:id="@+id/agianbutton"

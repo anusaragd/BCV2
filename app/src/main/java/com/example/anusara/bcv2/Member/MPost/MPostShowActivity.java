@@ -22,8 +22,10 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class MPostShowActivity extends AppCompatActivity {
@@ -33,6 +35,7 @@ public class MPostShowActivity extends AppCompatActivity {
     ListView listView;
     String user;
 
+    ArrayList<String> listid = new ArrayList<>();
     ArrayList<String> listname = new ArrayList<>();
     ArrayList<String> listcontent = new ArrayList<>();
     ArrayList<String> listdate = new ArrayList<>();
@@ -58,7 +61,7 @@ public class MPostShowActivity extends AppCompatActivity {
                     intent.putExtra("p_id",id);
                     intent.putExtra("username",user);
 //                    startActivityForResult(intent, 1);
-                    startActivity(intent);
+                    startActivityForResult(intent, 1);
 
                 }
 
@@ -92,10 +95,13 @@ public class MPostShowActivity extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 getHttp http = new getHttp();
                 String response = null;
+
                 try {
+
 //                    response = http.run("http://192.168.43.180/breast-cancer/postcomment.php");
-                    response = http.run("http://10.10.11.105/breast-cancer/postcomment.php");
-//                    response = http.run("http://192.168.1.33/breast-cancer/postcomment.php");
+//                    response = http.run("http://10.10.11.105/breast-cancer/postcomment.php");
+                    response = http.run("http://192.168.43.180/breast-cancer/postcomment.php");
+                    //response = http.run("http://192.168.1.33/breast-cancer/postcomment.php");
 //                    response = http.run("http://192.168.1.5/breast-cancer/postcomment.php");
 //                    response = http.run("http://192.168.1.37/breast-cancer/postcomment.php");
 //                    response = http.run("http://172.19.237.81/breast-cancer/postcomment.php");
@@ -119,7 +125,6 @@ public class MPostShowActivity extends AppCompatActivity {
                         JSONObject json_data = jsonArray.getJSONObject(i);
                         listname.add(i, json_data.getString("c_message"));
                         listcontent.add(i, json_data.getString("username"));
-                        listdate.add(i, json_data.getString("c_date"));
                         Log.e( "json_data: ", json_data.getString("c_message"));
 
 
@@ -137,8 +142,15 @@ public class MPostShowActivity extends AppCompatActivity {
     }
     public class getHttp {
         OkHttpClient client = new OkHttpClient();
+
+        RequestBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("p_id", id)
+                .build();
+
         String run(String url) throws IOException {
             Request request = new Request.Builder()
+                    .post(requestBody)
                     .url(url)
                     .build();
             Response response = client.newCall(request).execute();
@@ -150,11 +162,11 @@ public class MPostShowActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // Check which request we're responding to
         if (requestCode == 1) {
+            Log.e("onActivityResult: ", "doo");
             //adapter.notifyDataSetChanged();
             getList();
-            finish();
+            //finish();
 
-            Log.e("onActivityResult: ", "doo");
 
         }
     }

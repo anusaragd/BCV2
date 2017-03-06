@@ -1,10 +1,12 @@
 package com.example.anusara.bcv2.Guest.GQuestion;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +19,7 @@ public class GAnsQuesActivity extends AppCompatActivity {
     int sum1,sum2,sum3,sum4,sum5,sum6;
     TextView textShow, txtResult;
     Button btn1,btn2;
+    ImageView Imageshow;
 
 
     @Override
@@ -38,6 +41,7 @@ public class GAnsQuesActivity extends AppCompatActivity {
 
 
         textShow = (TextView) findViewById(R.id.textView15);
+        Imageshow = (ImageView) findViewById(R.id.imageView);
         Datasum();
 
 //        Buttonclick();
@@ -58,9 +62,7 @@ public class GAnsQuesActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (v.getId() == R.id.button5) {
-                    Intent intent = new Intent(getApplicationContext(), MQuestionActivity.class);
-                    startActivity(intent);
-
+                    finish();
                 }
 
             }
@@ -70,28 +72,39 @@ public class GAnsQuesActivity extends AppCompatActivity {
 
     public void Datasum() {
         int a = (sum1 +sum2 + sum3 + sum4 + sum5 + sum6);
-        int b = 0;
+
         String ANS = new String();
 
-        if (a == 0) {
+        if (sum2 != 0){
+            ANS = "ควรไปพบแพทย์โดนด่วน";
+            Imageshow.setImageResource(R.drawable.heat);
+
+        }
+        else if (sum5 != 0){
+            ANS = "ควรไปพบแพทย์โดนด่วน";
+            Imageshow.setImageResource(R.drawable.heat);
+        }
+        else if (sum6 != 0){
+            ANS = "ควรไปพบแพทย์โดนด่วน";
+            Imageshow.setImageResource(R.drawable.smile);
+        }
+        else if (a == 0) {
             ANS = "พบว่าคุณไม่มีความเสี่ยงมะเร็งเต้านม";
+            Imageshow.setImageResource(R.drawable.medu);
         }
-        if (a > 0 ) {
+        else if (a <= 2  ) {
             ANS = "พบว่าคุณอาจมีความเสี่ยงมะเร็งเต้านม";
+            Imageshow.setImageResource(R.drawable.medu);
         }
-        if (a >= 3 ) {
+        else  {
             ANS = "พบว่าคุณมีความเสี่ยงมะเร็งเต้านมเพิ่มสูงขึ้น";
-        }
-        if(a == 5){
-            ANS = "ควรไปพบแพทย์โดนด่วน";
-        }
-        if(b == sum2 || b == sum5 || b == sum6)
-        {
-            ANS = "ควรไปพบแพทย์โดนด่วน";
+            Imageshow.setImageResource(R.drawable.medu);
         }
 
 
-        Toast.makeText(getApplicationContext(),a + "",Toast.LENGTH_LONG).show();
+
+
+        Toast.makeText(getApplicationContext(),a + "res4fd",Toast.LENGTH_LONG).show();
         textShow.setText(ANS);
     }
 

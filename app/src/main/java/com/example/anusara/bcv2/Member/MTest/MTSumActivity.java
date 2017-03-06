@@ -31,9 +31,13 @@ import okhttp3.Response;
 public class MTSumActivity extends AppCompatActivity {
 
     TextView textShow, txtResult;
-    int sum1,sum2,sum3,sum4,sum5,sum6; //คำตอบ
+    int sum1, sum2, sum3, sum4, sum5, sum6; //คำตอบ
     Button savebut, agianbut;
-    String para , user;
+    String para;
+    String user;
+    String username;
+    String date;
+
 
     private Calendar cal;
     private int day;
@@ -47,7 +51,7 @@ public class MTSumActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mtsum);
 
         user = DataAccountManager.getInstance().getUsername();
-
+        username = user;
         cal = Calendar.getInstance();
         day = cal.get(Calendar.DAY_OF_MONTH);
         month = cal.get(Calendar.MONTH);
@@ -59,6 +63,9 @@ public class MTSumActivity extends AppCompatActivity {
         sum4 = getIntent().getIntExtra("sum4", 0);
         sum5 = getIntent().getIntExtra("sum5", 0);
         sum6 = getIntent().getIntExtra("sum6", 0);
+
+        date = cal.getTime().toString();
+        Log.e("onCreate: ", date);
 
         textShow = (TextView) findViewById(R.id.textView15);
         Datasum();
@@ -74,14 +81,21 @@ public class MTSumActivity extends AppCompatActivity {
                     new AsyncTask<Void, Void, String>() {
                         @Override
                         protected String doInBackground(Void... voids) {
-                            MTSumActivity.getHttp http = new MTSumActivity.getHttp();
+                            getHttp http = new getHttp();
                             String response = null;
                             try {
+                                RequestBody requestBody = new MultipartBody.Builder()
+                                        .setType(MultipartBody.FORM)
+                                        .addFormDataPart("username", username)
+                                        .addFormDataPart("r_id", para)
+                                        .addFormDataPart("p_date", date)
+                                        .build();
 //                            response = http.run("http://192.168.43.180/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.2/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.37/breast-cancer/insert2.php");
-                            response = http.run("http://10.10.11.105/breast-cancer/insert2.php");
-//                            response = http.run("http://192.168.1.33/breast-cancer/inserttotal.php");
+//                            response = http.run("http://10.10.11.105/breast-cancer/insert2.php");
+                                response = http.run("http://192.168.43.180/breast-cancer/inserttotal.php", requestBody);
+                              //  response = http.run("http://192.168.1.33/breast-cancer/inserttotal.php", requestBody);
 //                            response = http.run("http://192.168.1.5/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.43/breast-cancer/insert2.php");
 //                            response = http.run("http://172.19.237.81/breast-cancer/insert2.php");
@@ -89,7 +103,7 @@ public class MTSumActivity extends AppCompatActivity {
                                 // TODO Auto-generated catch block
                                 e.printStackTrace();
                             }
-                            Log.e( "GGGGGGGGGGGGG: ", response);
+                            Log.e("GGGGGGGGGGGGG: ", response);
                             return response;
                         }
 
@@ -97,26 +111,17 @@ public class MTSumActivity extends AppCompatActivity {
                         protected void onPostExecute(String string) {
                             super.onPostExecute(string);
 
-                            Log.e( "onPostExecute: ", string);
+                            Log.e("onPostExecute: ", string);
                         }
                     }.execute();
 
-//                    gethttp();
-
-//                    OkHttpClient client = new OkHttpClient();
-//
-//                    RequestBody requestBody = new MultipartBody.Builder()
-//                            .setType(MultipartBody.FORM)
-//                            .addFormDataPart("username", user)
-//                            .addFormDataPart("r_id", txtResult.getText().toString())
-//                            .addFormDataPart("dateup",cal.getTime().toString())
-////                            .addFormDataPart("dateup",cal.getText().toString())
-//                            .build();
+//                   }
 
                 }
-
             }
         });
+
+
         agianbut = (Button) findViewById(R.id.agianbutton);
         agianbut.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -130,35 +135,48 @@ public class MTSumActivity extends AppCompatActivity {
             }
         });
 
-
-        getHttp http = new getHttp();
-        String response = null;
-        try {
+        new AsyncTask<Void, Void, String>() {
+            @Override
+            protected String doInBackground(Void... voids) {
+                getHttp http = new getHttp();
+                String response = null;
+                try {
+                    RequestBody requestBody = new MultipartBody.Builder()
+                            .setType(MultipartBody.FORM)
+                            .addFormDataPart("r_id", para)
+                            .build();
+                    Log.e("onCreate: ", para);
 //            response = http.run("http://192.168.1.2/breast-cancer/getString.php");
 //            response = http.run("http://192.168.43.180/breast-cancer/getString.php");
 //            response = http.run("http://192.168.1.5/breast-cancer/getString.php");
 //            response = http.run("http://192.168.1.37/breast-cancer/getString.php");
-            response = http.run("http://192.168.1.33/breast-cancer/getString.php");
+                    response = http.run("http://192.168.43.180/breast-cancer/getString.php", requestBody);
+                  //  response = http.run("http://192.168.1.33/breast-cancer/getString.php", requestBody);
+//                    Log.e("onCreate: ", response);
 //            response = http.run("http://10.10.11.105/breast-cancer/getString.php");
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        txtResult.setText(response);
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                return response;
+//        txtResult.setText(response);
 
+            }
+
+            @Override
+            protected void onPostExecute(String string) {
+                super.onPostExecute(string);
+
+                txtResult.setText(string);
+                Log.e("onPostExecute: ", string);
+            }
+        }.execute();
     }
+
     public class getHttp {
         OkHttpClient client = new OkHttpClient();
 
-        RequestBody requestBody = new MultipartBody.Builder()
-                .setType(MultipartBody.FORM)
-                .addFormDataPart("r_id", para)
-                .addFormDataPart("username", user)
-                .addFormDataPart("r_id", txtResult.getText().toString())
-                .addFormDataPart("dateup",cal.getTime().toString())
-                .build();
-
-        String run(String url) throws IOException {
+        String run(String url, RequestBody requestBody) throws IOException {
             Request request = new Request.Builder()
                     .post(requestBody)
                     .url(url)
@@ -167,6 +185,27 @@ public class MTSumActivity extends AppCompatActivity {
             return response.body().string();
         }
     }
+
+    //    public class getHttp {
+//        OkHttpClient client = new OkHttpClient();
+//
+//        RequestBody requestBody = new MultipartBody.Builder()
+//                .setType(MultipartBody.FORM)
+//                .addFormDataPart("r_id", para)
+//                .addFormDataPart("username", user)
+//                .addFormDataPart("r_id", txtResult.getText().toString())
+//                .addFormDataPart("dateup",cal.getTime().toString())
+//                .build();
+//
+//        String run(String url) throws IOException {
+//            Request request = new Request.Builder()
+//                    .post(requestBody)
+//                    .url(url)
+//                    .build();
+//            Response response = client.newCall(request).execute();
+//            return response.body().string();
+//        }
+//    }
     public void Datasum() {
         int a = (sum1 + sum2 + sum3 + sum4 + sum5 + sum6);
         String ANS = new String();
@@ -193,8 +232,14 @@ public class MTSumActivity extends AppCompatActivity {
 //        }
 
 
-        Toast.makeText(getApplicationContext(),a + "",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), a + "", Toast.LENGTH_LONG).show();
         textShow.setText(ANS);
+    }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        finish();
     }
 
     @Override
@@ -213,63 +258,58 @@ public class MTSumActivity extends AppCompatActivity {
 
 
 
-
-    @Override
-    public void onBackPressed() {
-//        super.onBackPressed();
-        finish();
-    }
-
-
-
-
-    public int getSum1() {
-        return sum1;
-    }
-
-    public void setSum1(int sum1) {
-        this.sum1 = sum1;
-    }
-
-    public int getSum2() {
-        return sum2;
-    }
-
-    public void setSum2(int sum2) {
-        this.sum2 = sum2;
-    }
-
-    public int getSum3() {
-        return sum3;
-    }
-
-    public void setSum3(int sum3) {
-        this.sum3 = sum3;
-    }
-
-    public int getSum4() {
-        return sum4;
-    }
-
-    public void setSum4(int sum4) {
-        this.sum4 = sum4;
-    }
-
-    public int getSum5() {
-        return sum5;
-    }
-
-    public void setSum5(int sum5) {
-        this.sum5 = sum5;
-    }
-
-    public int getSum6() {
-        return sum6;
-    }
-
-    public void setSum6(int sum6) {
-        this.sum6 = sum6;
-    }
-
 }
 
+
+
+
+//    public int getSum1() {
+//        return sum1;
+//    }
+//
+//    public void setSum1(int sum1) {
+//        this.sum1 = sum1;
+//    }
+//
+//    public int getSum2() {
+//        return sum2;
+//    }
+//
+//    public void setSum2(int sum2) {
+//        this.sum2 = sum2;
+//    }
+//
+//    public int getSum3() {
+//        return sum3;
+//    }
+//
+//    public void setSum3(int sum3) {
+//        this.sum3 = sum3;
+//    }
+//
+//    public int getSum4() {
+//        return sum4;
+//    }
+//
+//    public void setSum4(int sum4) {
+//        this.sum4 = sum4;
+//    }
+//
+//    public int getSum5() {
+//        return sum5;
+//    }
+//
+//    public void setSum5(int sum5) {
+//        this.sum5 = sum5;
+//    }
+//
+//    public int getSum6() {
+//        return sum6;
+//    }
+//
+//    public void setSum6(int sum6) {
+//        this.sum6 = sum6;
+//    }
+//
+//}
+//

@@ -15,7 +15,8 @@ public class MT5Activity extends AppCompatActivity {
     RadioButton myOption1, myOption2, myOption3; //ปลุกกด
     Button btn1;
     String ans; //เก็บผลลัพธ์
-    int sum1,sum2,sum3,sum4,sum5; //คำตอบ
+    int sum1,sum2,sum3,sum4;
+    int sum5 = -1 ; //คำตอบ
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

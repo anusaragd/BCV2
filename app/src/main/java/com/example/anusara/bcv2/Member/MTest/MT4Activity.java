@@ -65,10 +65,10 @@ public class MT4Activity extends AppCompatActivity {
     }
     public void Condition(){
         if(myOption1.isChecked()){
-            sum4 = 2;
+            sum4 = 0;
         }
         if(myOption2.isChecked()){
-            sum4 = 0;
+            sum4 = 2;
         }
 //        if(myOption3.isChecked()){
 //            sum4 = 1;

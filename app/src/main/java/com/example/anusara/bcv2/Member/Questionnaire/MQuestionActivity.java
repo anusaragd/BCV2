@@ -91,10 +91,10 @@ public class MQuestionActivity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
+
+
+
     public void Condition1() {
         if (myOption1.isChecked()) {
             sum1 = 1;

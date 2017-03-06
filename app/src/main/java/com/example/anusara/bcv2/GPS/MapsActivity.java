@@ -1,11 +1,13 @@
 package com.example.anusara.bcv2.GPS;
 
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 
 import com.example.anusara.bcv2.R;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -13,7 +15,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mMap;
 
@@ -48,6 +50,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // Show rationale and request permission.
         }
         mMap.setMyLocationEnabled(true);
+
+
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(13.9047413, 100.5242884))
                 .title("โรงพยาบาลเวิลด์เมดิคอลเซ็นเตอร์")
@@ -159,15 +163,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 //        // Add a marker in Sydney and move the camera
-        LatLng thailand = new LatLng(13.725109, 100.3522138);
+        //LatLng thailand = new LatLng(13.8000, 101.3522138);
 //        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(thailand));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(thailand));
 
 
         // Add a marker in Sydney and move the camera
 //        LatLng sydney = new LatLng(-34, 151);
 //        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
 //        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        LatLng thailand = new LatLng(location.getLatitude(), location.getLongitude());
+//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(thailand));
     }
 
 

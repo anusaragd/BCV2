@@ -27,7 +27,7 @@ import okhttp3.Response;
 public class MPostaddActivity extends AppCompatActivity {
 
     EditText edt_name, edt_contents;
-    Button btn_insert;
+    Button btn_insert, btn_clear;
     String user ;
 
     private Calendar cal;
@@ -66,8 +66,9 @@ public class MPostaddActivity extends AppCompatActivity {
 //                            response = http.run("http://192.168.43.180/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.2/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.37/breast-cancer/insert2.php");
-                            response = http.run("http://10.10.11.105/breast-cancer/insert2.php");
-//                            response = http.run("http://192.168.1.33/breast-cancer/insert2.php");
+//                            response = http.run("http://10.10.11.105/breast-cancer/insert2.php");
+                            response = http.run("http://192.168.43.180/breast-cancer/insert2.php");
+                            //response = http.run("http://192.168.1.33/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.5/breast-cancer/insert2.php");
 //                            response = http.run("http://192.168.1.43/breast-cancer/insert2.php");
 //                            response = http.run("http://172.19.237.81/breast-cancer/insert2.php");
@@ -89,6 +90,16 @@ public class MPostaddActivity extends AppCompatActivity {
 
 
 
+            }
+        });
+
+        btn_insert = (Button)findViewById(R.id.button);
+        btn_insert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MPostaddActivity.this, MPostaddActivity.class);
+
+                startActivity(intent);
             }
         });
 
