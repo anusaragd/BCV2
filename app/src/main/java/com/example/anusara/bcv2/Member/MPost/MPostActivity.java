@@ -112,8 +112,9 @@ public class MPostActivity extends AppCompatActivity {
 //                    response = http.run("http://192.168.43.180/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.37/breast-cancer/post.php");
 //                    response = http.run("http://10.10.11.105/breast-cancer/post.php");
-                    response = http.run("http://192.168.43.180/breast-cancer/post.php");
+//                    response = http.run("http://192.168.43.180/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.33/breast-cancer/post.php");
+                    response = http.run("http://192.168.1.35/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.5/breast-cancer/post.php");
 //                    response = http.run("http://192.168.1.43/breast-cancer/post.php");
                 } catch (IOException e) {

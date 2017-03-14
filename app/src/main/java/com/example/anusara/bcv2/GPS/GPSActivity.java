@@ -49,7 +49,7 @@ public class GPSActivity extends FragmentActivity implements OnMapReadyCallback,
 
         contactList = new ArrayList<>();
 
-        lv = (ListView) findViewById(R.id.listViewGPS);
+//        lv = (ListView) findViewById(R.id.listViewGPS);
 
 
 //        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()

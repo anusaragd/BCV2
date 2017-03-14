@@ -106,21 +106,20 @@
         <activity android:name=".Guest.GTest.GT5Activity" />
         <activity android:name=".Guest.GTest.GT6Activity" />
         <activity android:name=".Guest.GTest.GTSumActivity" />
-        <activity android:name=".Guest.GTest.GTestActivity"></activity>
+        <activity android:name=".Guest.GTest.GTestActivity" />
 
-
-        <service
-            android:name=".MyFirebaseMessagingService">
+        <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service
-            android:name=".MyFirebaseInstanceIDService">
+        <service android:name=".MyFirebaseInstanceIDService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".Member.testshowActivity"></activity>
     </application>
 
 </manifest>

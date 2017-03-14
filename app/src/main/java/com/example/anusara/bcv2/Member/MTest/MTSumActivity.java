@@ -150,8 +150,9 @@ public class MTSumActivity extends AppCompatActivity {
 //            response = http.run("http://192.168.43.180/breast-cancer/getString.php");
 //            response = http.run("http://192.168.1.5/breast-cancer/getString.php");
 //            response = http.run("http://192.168.1.37/breast-cancer/getString.php");
-                    response = http.run("http://192.168.43.180/breast-cancer/getString.php", requestBody);
+//                    response = http.run("http://192.168.43.180/breast-cancer/getString.php", requestBody);
                   //  response = http.run("http://192.168.1.33/breast-cancer/getString.php", requestBody);
+                    response = http.run("http://192.168.1.35/breast-cancer/getString.php", requestBody);
 //                    Log.e("onCreate: ", response);
 //            response = http.run("http://10.10.11.105/breast-cancer/getString.php");
                 } catch (IOException e) {
